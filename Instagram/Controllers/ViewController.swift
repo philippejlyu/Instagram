@@ -34,14 +34,28 @@ class ViewController: UITableViewController {
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! PostViewCell
         
-        cell.setOutlets(profileImage: UIImage(named: "Club")!, username: "BMSSProgramming", contentImage: UIImage(named: "Hero")!, caption: "Join the programming club")
+        if indexPath.row == 0 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "storiesCell", for: indexPath)
+            
+            return cell
+        } else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! PostViewCell
+            
+            cell.setOutlets(profileImage: UIImage(named: "Club")!, username: "BMSSProgramming", contentImage: UIImage(named: "Hero")!, caption: "Join the programming club")
+            
+            return cell
+        }
         
-
-        // Configure the cell...
-
-        return cell
+        
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if indexPath.row == 0 {
+            return 93.5
+        } else {
+            return 485.0
+        }
     }
     
 
