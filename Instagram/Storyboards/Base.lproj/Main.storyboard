@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="493" id="ccJ-lR-zPp">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="493" id="ccJ-lR-zPp" customClass="PostViewCell" customModule="Instagram" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="493"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ccJ-lR-zPp" id="Rqk-Cr-v0C">
@@ -95,6 +95,13 @@
                                         <constraint firstItem="djN-lF-ezK" firstAttribute="top" secondItem="BCP-ES-RaY" secondAttribute="bottom" constant="8" id="zsl-pP-Xjj"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="captionLabelView" destination="zg0-e7-41G" id="Bwu-Yb-4kt"/>
+                                    <outlet property="contentImageView" destination="djN-lF-ezK" id="2Yn-Ag-ZJZ"/>
+                                    <outlet property="likeButton" destination="uGR-Ak-mOr" id="pr4-6N-acy"/>
+                                    <outlet property="profileImageView" destination="BCP-ES-RaY" id="9Yw-X8-12e"/>
+                                    <outlet property="usernameLabel" destination="gvh-jd-fZJ" id="TWB-Ro-PX3"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>

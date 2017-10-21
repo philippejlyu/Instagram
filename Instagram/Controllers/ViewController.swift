@@ -34,7 +34,10 @@ class ViewController: UITableViewController {
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! PostViewCell
+        
+        cell.setOutlets(profileImage: UIImage(named: "Club")!, username: "BMSSProgramming", contentImage: UIImage(named: "Hero")!, caption: "Join the programming club")
+        
 
         // Configure the cell...
 
