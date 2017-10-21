@@ -21,14 +21,8 @@ class PostViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        profileImageView.layer.cornerRadius = 25.0
-        profileImageView.clipsToBounds = true
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+        self.profileImageView.layer.cornerRadius = 25.0
+        self.profileImageView.clipsToBounds = true
     }
     
     //MARK: - Setting up
@@ -37,6 +31,7 @@ class PostViewCell: UITableViewCell {
         self.profileImageView.image = profileImage
         self.usernameLabel.text = username
         self.contentImageView.image = contentImage
+        self.captionLabelView.text = "\(username): \(caption)"
     }
     
     
