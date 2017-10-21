@@ -8,20 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		AD4368561F9AF55B00AA3D73 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4368551F9AF55B00AA3D73 /* AppDelegate.swift */; };
-		AD4368581F9AF55B00AA3D73 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4368571F9AF55B00AA3D73 /* ViewController.swift */; };
 		AD43685B1F9AF55B00AA3D73 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD4368591F9AF55B00AA3D73 /* Main.storyboard */; };
 		AD43685D1F9AF55B00AA3D73 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD43685C1F9AF55B00AA3D73 /* Assets.xcassets */; };
 		AD4368601F9AF55B00AA3D73 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD43685E1F9AF55B00AA3D73 /* LaunchScreen.storyboard */; };
+		AD4368761F9AF5E700AA3D73 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4368751F9AF5E700AA3D73 /* ViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		AD4368521F9AF55B00AA3D73 /* Instagram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Instagram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD4368551F9AF55B00AA3D73 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		AD4368571F9AF55B00AA3D73 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		AD43685A1F9AF55B00AA3D73 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AD43685C1F9AF55B00AA3D73 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AD43685F1F9AF55B00AA3D73 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AD4368611F9AF55B00AA3D73 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AD4368751F9AF5E700AA3D73 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,13 +55,29 @@
 			isa = PBXGroup;
 			children = (
 				AD4368551F9AF55B00AA3D73 /* AppDelegate.swift */,
-				AD4368571F9AF55B00AA3D73 /* ViewController.swift */,
-				AD4368591F9AF55B00AA3D73 /* Main.storyboard */,
+				AD4368781F9AF61D00AA3D73 /* Storyboards */,
+				AD4368771F9AF60D00AA3D73 /* Controllers */,
 				AD43685C1F9AF55B00AA3D73 /* Assets.xcassets */,
 				AD43685E1F9AF55B00AA3D73 /* LaunchScreen.storyboard */,
 				AD4368611F9AF55B00AA3D73 /* Info.plist */,
 			);
 			path = Instagram;
+			sourceTree = "<group>";
+		};
+		AD4368771F9AF60D00AA3D73 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				AD4368751F9AF5E700AA3D73 /* ViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		AD4368781F9AF61D00AA3D73 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				AD4368591F9AF55B00AA3D73 /* Main.storyboard */,
+			);
+			path = Storyboards;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -136,7 +152,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AD4368581F9AF55B00AA3D73 /* ViewController.swift in Sources */,
+				AD4368761F9AF5E700AA3D73 /* ViewController.swift in Sources */,
 				AD4368561F9AF55B00AA3D73 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -275,6 +291,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7TR28E27K7;
 				INFOPLIST_FILE = Instagram/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.philippeyu.Instagram;
@@ -289,6 +306,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7TR28E27K7;
 				INFOPLIST_FILE = Instagram/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.philippeyu.Instagram;
