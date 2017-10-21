@@ -14,6 +14,10 @@
 		AD4368761F9AF5E700AA3D73 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4368751F9AF5E700AA3D73 /* ViewController.swift */; };
 		AD43687A1F9AFB3100AA3D73 /* PostViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4368791F9AFB3100AA3D73 /* PostViewCell.swift */; };
 		AD43687C1F9B104800AA3D73 /* StoriesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD43687B1F9B104800AA3D73 /* StoriesCell.swift */; };
+		ADE638C21F9C11660070709F /* ActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE638C11F9C11660070709F /* ActivityViewController.swift */; };
+		ADE638C41F9C11810070709F /* ActivityLikeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE638C31F9C11810070709F /* ActivityLikeCell.swift */; };
+		ADE638C61F9C119A0070709F /* ActivityFollowingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE638C51F9C119A0070709F /* ActivityFollowingCell.swift */; };
+		ADE638C81F9C11AE0070709F /* ActivityNewFriendViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE638C71F9C11AE0070709F /* ActivityNewFriendViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +30,10 @@
 		AD4368751F9AF5E700AA3D73 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		AD4368791F9AFB3100AA3D73 /* PostViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewCell.swift; sourceTree = "<group>"; };
 		AD43687B1F9B104800AA3D73 /* StoriesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoriesCell.swift; sourceTree = "<group>"; };
+		ADE638C11F9C11660070709F /* ActivityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityViewController.swift; sourceTree = "<group>"; };
+		ADE638C31F9C11810070709F /* ActivityLikeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityLikeCell.swift; sourceTree = "<group>"; };
+		ADE638C51F9C119A0070709F /* ActivityFollowingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityFollowingCell.swift; sourceTree = "<group>"; };
+		ADE638C71F9C11AE0070709F /* ActivityNewFriendViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityNewFriendViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,7 +81,8 @@
 			children = (
 				AD4368791F9AFB3100AA3D73 /* PostViewCell.swift */,
 				AD4368751F9AF5E700AA3D73 /* ViewController.swift */,
-				AD43687B1F9B104800AA3D73 /* StoriesCell.swift */,
+				ADE638C11F9C11660070709F /* ActivityViewController.swift */,
+				ADE638C91F9C11B60070709F /* Cells */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -84,6 +93,18 @@
 				AD4368591F9AF55B00AA3D73 /* Main.storyboard */,
 			);
 			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		ADE638C91F9C11B60070709F /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				AD43687B1F9B104800AA3D73 /* StoriesCell.swift */,
+				ADE638C31F9C11810070709F /* ActivityLikeCell.swift */,
+				ADE638C51F9C119A0070709F /* ActivityFollowingCell.swift */,
+				ADE638C71F9C11AE0070709F /* ActivityNewFriendViewCell.swift */,
+			);
+			name = Cells;
+			path = "New Group";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -161,6 +182,10 @@
 				AD43687A1F9AFB3100AA3D73 /* PostViewCell.swift in Sources */,
 				AD43687C1F9B104800AA3D73 /* StoriesCell.swift in Sources */,
 				AD4368761F9AF5E700AA3D73 /* ViewController.swift in Sources */,
+				ADE638C41F9C11810070709F /* ActivityLikeCell.swift in Sources */,
+				ADE638C81F9C11AE0070709F /* ActivityNewFriendViewCell.swift in Sources */,
+				ADE638C21F9C11660070709F /* ActivityViewController.swift in Sources */,
+				ADE638C61F9C119A0070709F /* ActivityFollowingCell.swift in Sources */,
 				AD4368561F9AF55B00AA3D73 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
