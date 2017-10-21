@@ -39,7 +39,6 @@ class ActivityViewController: UITableViewController {
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        print("Going to configure the cell")
         if indexPath.row == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "activityLike", for: indexPath) as! ActivityLikeCell
             return cell
