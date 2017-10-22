@@ -67,6 +67,7 @@ class ActivityViewController: UITableViewController {
         if segue.identifier == "profile" {
             let destination = segue.destination as! ProfileViewController
             destination.ownProfile = false
+            destination.username = "steveJobs"
         }
     }
     
