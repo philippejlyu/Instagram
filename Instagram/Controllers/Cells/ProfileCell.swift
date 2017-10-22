@@ -16,10 +16,19 @@ class ProfileCell: UICollectionViewCell {
     @IBOutlet weak var followingNumberLabel: UILabel!
     @IBOutlet weak var realNameLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var editProfileButton: UIButton!
+    @IBOutlet weak var followButton: UIButton!
+    @IBOutlet weak var settingsButton: UIButton!
     
     //MARK: - UI Functions
-    func setUI() {
+    func setUI(ownProfile: Bool) {
         self.profilePicture.layer.cornerRadius = 40.0
         self.profilePicture.clipsToBounds = true
+        if !ownProfile {
+            editProfileButton.isHidden = true
+            settingsButton.isHidden = true
+            followButton.isHidden = false
+
+        }
     }
 }

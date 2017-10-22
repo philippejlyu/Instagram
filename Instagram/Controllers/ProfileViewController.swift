@@ -10,9 +10,13 @@ import UIKit
 
 class ProfileViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
 
+    //MARK: - Properties
+    var ownProfile = false
+    
+    
+    //MARK: - View lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
         
     }
     
@@ -50,7 +54,7 @@ class ProfileViewController: UICollectionViewController, UICollectionViewDelegat
             cell.followingNumberLabel.text = "158"
             cell.postNumberLabel.text = "260"
             cell.realNameLabel.text = "Philippe Yu"
-            cell.setUI()
+            cell.setUI(ownProfile: ownProfile)
             return cell
         } else {
             //Do the photos

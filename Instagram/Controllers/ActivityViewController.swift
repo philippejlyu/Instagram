@@ -51,6 +51,12 @@ class ActivityViewController: UITableViewController {
         }
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.row != 0 {
+            self.performSegue(withIdentifier: "profile", sender: self)
+        }
+    }
+    
 
     /*
     // Override to support conditional editing of the table view.
