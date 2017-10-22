@@ -17,7 +17,7 @@ class ProfileViewController: UICollectionViewController, UICollectionViewDelegat
     //MARK: - View lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = username
+        self.navigationItem.title = username
     }
     
     /*
