@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AD29DB7C1F9D2170004F1539 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD29DB7B1F9D2170004F1539 /* ProfileViewController.swift */; };
 		AD4368561F9AF55B00AA3D73 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4368551F9AF55B00AA3D73 /* AppDelegate.swift */; };
 		AD43685B1F9AF55B00AA3D73 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD4368591F9AF55B00AA3D73 /* Main.storyboard */; };
 		AD43685D1F9AF55B00AA3D73 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD43685C1F9AF55B00AA3D73 /* Assets.xcassets */; };
@@ -23,6 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AD29DB7B1F9D2170004F1539 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		AD4368521F9AF55B00AA3D73 /* Instagram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Instagram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD4368551F9AF55B00AA3D73 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AD43685A1F9AF55B00AA3D73 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -83,6 +85,7 @@
 		AD4368771F9AF60D00AA3D73 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				AD29DB7B1F9D2170004F1539 /* ProfileViewController.swift */,
 				AD4368751F9AF5E700AA3D73 /* ViewController.swift */,
 				ADE638CA1F9C19330070709F /* DiscoverViewController.swift */,
 				AD4368791F9AFB3100AA3D73 /* PostViewCell.swift */,
@@ -190,6 +193,7 @@
 				ADCCF1211F9C270F0020ECFB /* ActivityLikeCell.swift in Sources */,
 				ADCCF1231F9C270F0020ECFB /* ActivityFollowingCell.swift in Sources */,
 				ADCCF1221F9C270F0020ECFB /* DiscoverCell.swift in Sources */,
+				AD29DB7C1F9D2170004F1539 /* ProfileViewController.swift in Sources */,
 				AD4368761F9AF5E700AA3D73 /* ViewController.swift in Sources */,
 				ADCCF11F1F9C270F0020ECFB /* StoriesCell.swift in Sources */,
 				ADE638C21F9C11660070709F /* ActivityViewController.swift in Sources */,
