@@ -8,6 +8,6 @@
 
 import UIKit
 
-class DiscoverCell: UICollectionViewCell {
+class ImageCell: UICollectionViewCell {
     @IBOutlet weak var contentImageView: UIImageView!
 }
