@@ -470,7 +470,7 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="infoCell" id="E7B-Ot-NK8">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="infoCell" id="E7B-Ot-NK8" customClass="ProfileCell" customModule="Instagram" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="170"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -606,6 +606,14 @@
                                     <constraint firstItem="ZhU-lW-JTW" firstAttribute="top" secondItem="E7B-Ot-NK8" secondAttribute="top" constant="20" id="xH0-Kv-p7g"/>
                                 </constraints>
                                 <size key="customSize" width="375" height="170"/>
+                                <connections>
+                                    <outlet property="descriptionLabel" destination="hAx-49-rjf" id="wgH-J4-csF"/>
+                                    <outlet property="followerNumberLabel" destination="m5S-KE-PhU" id="dJ5-fh-AZO"/>
+                                    <outlet property="followingNumberLabel" destination="xch-Mr-ndx" id="GiR-FL-8Za"/>
+                                    <outlet property="postNumberLabel" destination="YqK-Ty-Cj0" id="vIZ-XM-uQY"/>
+                                    <outlet property="profilePicture" destination="ZhU-lW-JTW" id="jA4-Nn-sJr"/>
+                                    <outlet property="realNameLabel" destination="ZUk-Co-5Wh" id="yER-ft-3x2"/>
+                                </connections>
                             </collectionViewCell>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="imageCell" id="f5p-c5-lIc" customClass="ImageCell" customModule="Instagram" customModuleProvider="target">
                                 <rect key="frame" x="122.5" y="171" width="130" height="130"/>
