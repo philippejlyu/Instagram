@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AD29DB7C1F9D2170004F1539 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD29DB7B1F9D2170004F1539 /* ProfileViewController.swift */; };
+		AD29DB801F9D235D004F1539 /* ProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD29DB7F1F9D235D004F1539 /* ProfileCell.swift */; };
 		AD4368561F9AF55B00AA3D73 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4368551F9AF55B00AA3D73 /* AppDelegate.swift */; };
 		AD43685B1F9AF55B00AA3D73 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD4368591F9AF55B00AA3D73 /* Main.storyboard */; };
 		AD43685D1F9AF55B00AA3D73 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD43685C1F9AF55B00AA3D73 /* Assets.xcassets */; };
@@ -16,13 +18,15 @@
 		ADCCF11F1F9C270F0020ECFB /* StoriesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADCCF11A1F9C270E0020ECFB /* StoriesCell.swift */; };
 		ADCCF1201F9C270F0020ECFB /* ActivityNewFriendViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADCCF11B1F9C270E0020ECFB /* ActivityNewFriendViewCell.swift */; };
 		ADCCF1211F9C270F0020ECFB /* ActivityLikeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADCCF11C1F9C270E0020ECFB /* ActivityLikeCell.swift */; };
-		ADCCF1221F9C270F0020ECFB /* DiscoverCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADCCF11D1F9C270F0020ECFB /* DiscoverCell.swift */; };
+		ADCCF1221F9C270F0020ECFB /* ImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADCCF11D1F9C270F0020ECFB /* ImageCell.swift */; };
 		ADCCF1231F9C270F0020ECFB /* ActivityFollowingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADCCF11E1F9C270F0020ECFB /* ActivityFollowingCell.swift */; };
 		ADE638C21F9C11660070709F /* ActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE638C11F9C11660070709F /* ActivityViewController.swift */; };
 		ADE638CB1F9C19330070709F /* DiscoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE638CA1F9C19330070709F /* DiscoverViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AD29DB7B1F9D2170004F1539 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		AD29DB7F1F9D235D004F1539 /* ProfileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCell.swift; sourceTree = "<group>"; };
 		AD4368521F9AF55B00AA3D73 /* Instagram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Instagram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD4368551F9AF55B00AA3D73 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AD43685A1F9AF55B00AA3D73 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -34,7 +38,7 @@
 		ADCCF11A1F9C270E0020ECFB /* StoriesCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoriesCell.swift; sourceTree = "<group>"; };
 		ADCCF11B1F9C270E0020ECFB /* ActivityNewFriendViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityNewFriendViewCell.swift; sourceTree = "<group>"; };
 		ADCCF11C1F9C270E0020ECFB /* ActivityLikeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityLikeCell.swift; sourceTree = "<group>"; };
-		ADCCF11D1F9C270F0020ECFB /* DiscoverCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscoverCell.swift; sourceTree = "<group>"; };
+		ADCCF11D1F9C270F0020ECFB /* ImageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCell.swift; sourceTree = "<group>"; };
 		ADCCF11E1F9C270F0020ECFB /* ActivityFollowingCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityFollowingCell.swift; sourceTree = "<group>"; };
 		ADE638C11F9C11660070709F /* ActivityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityViewController.swift; sourceTree = "<group>"; };
 		ADE638CA1F9C19330070709F /* DiscoverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverViewController.swift; sourceTree = "<group>"; };
@@ -51,6 +55,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AD29DB7E1F9D233C004F1539 /* Activity Cells */ = {
+			isa = PBXGroup;
+			children = (
+				ADCCF11E1F9C270F0020ECFB /* ActivityFollowingCell.swift */,
+				ADCCF11C1F9C270E0020ECFB /* ActivityLikeCell.swift */,
+				ADCCF11B1F9C270E0020ECFB /* ActivityNewFriendViewCell.swift */,
+			);
+			path = "Activity Cells";
+			sourceTree = "<group>";
+		};
 		AD4368491F9AF55B00AA3D73 = {
 			isa = PBXGroup;
 			children = (
@@ -83,9 +97,9 @@
 		AD4368771F9AF60D00AA3D73 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				AD29DB7B1F9D2170004F1539 /* ProfileViewController.swift */,
 				AD4368751F9AF5E700AA3D73 /* ViewController.swift */,
 				ADE638CA1F9C19330070709F /* DiscoverViewController.swift */,
-				AD4368791F9AFB3100AA3D73 /* PostViewCell.swift */,
 				ADE638C11F9C11660070709F /* ActivityViewController.swift */,
 				ADCCF1191F9C26FD0020ECFB /* Cells */,
 			);
@@ -103,11 +117,11 @@
 		ADCCF1191F9C26FD0020ECFB /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				ADCCF11E1F9C270F0020ECFB /* ActivityFollowingCell.swift */,
-				ADCCF11C1F9C270E0020ECFB /* ActivityLikeCell.swift */,
-				ADCCF11B1F9C270E0020ECFB /* ActivityNewFriendViewCell.swift */,
-				ADCCF11D1F9C270F0020ECFB /* DiscoverCell.swift */,
+				AD29DB7E1F9D233C004F1539 /* Activity Cells */,
+				ADCCF11D1F9C270F0020ECFB /* ImageCell.swift */,
+				AD4368791F9AFB3100AA3D73 /* PostViewCell.swift */,
 				ADCCF11A1F9C270E0020ECFB /* StoriesCell.swift */,
+				AD29DB7F1F9D235D004F1539 /* ProfileCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -189,9 +203,11 @@
 				ADCCF1201F9C270F0020ECFB /* ActivityNewFriendViewCell.swift in Sources */,
 				ADCCF1211F9C270F0020ECFB /* ActivityLikeCell.swift in Sources */,
 				ADCCF1231F9C270F0020ECFB /* ActivityFollowingCell.swift in Sources */,
-				ADCCF1221F9C270F0020ECFB /* DiscoverCell.swift in Sources */,
+				ADCCF1221F9C270F0020ECFB /* ImageCell.swift in Sources */,
+				AD29DB7C1F9D2170004F1539 /* ProfileViewController.swift in Sources */,
 				AD4368761F9AF5E700AA3D73 /* ViewController.swift in Sources */,
 				ADCCF11F1F9C270F0020ECFB /* StoriesCell.swift in Sources */,
+				AD29DB801F9D235D004F1539 /* ProfileCell.swift in Sources */,
 				ADE638C21F9C11660070709F /* ActivityViewController.swift in Sources */,
 				AD4368561F9AF55B00AA3D73 /* AppDelegate.swift in Sources */,
 			);

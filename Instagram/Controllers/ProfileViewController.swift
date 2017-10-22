@@ -1,32 +1,25 @@
 //
-//  DiscoverViewController.swift
+//  ProfileViewController.swift
 //  Instagram
 //
-//  Created by Philippe Yu on 2017-10-21.
+//  Created by Philippe Yu on 2017-10-22.
 //  Copyright © 2017 Philippe Yu. All rights reserved.
 //
 
 import UIKit
 
-class DiscoverViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
+class ProfileViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
 
+    //MARK: - Properties
+    var ownProfile = true
+    var username = "someonecalledphilippe"
+    
+    //MARK: - View lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Register cell classes
-        //self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-
-        // Do any additional setup after loading the view.
+        self.title = username
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
+    
     /*
     // MARK: - Navigation
 
@@ -42,7 +35,7 @@ class DiscoverViewController: UICollectionViewController, UICollectionViewDelega
     /*
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 1
+        return 0
     }
      */
 
@@ -52,27 +45,49 @@ class DiscoverViewController: UICollectionViewController, UICollectionViewDelega
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "imageCell", for: indexPath) as! ImageCell
-        cell.contentImageView.image = UIImage(named: "Club")
-    
-        // Configure the cell
-    
-        return cell
+        
+        if indexPath.row == 0 {
+            //Profile summary
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "infoCell", for: indexPath) as! ProfileCell
+            cell.descriptionLabel.text = "Loreum Ipsum dor sit amet"
+            cell.followerNumberLabel.text = "62"
+            cell.followingNumberLabel.text = "158"
+            cell.postNumberLabel.text = "260"
+            cell.realNameLabel.text = "Philippe Yu"
+            cell.setUI(ownProfile: ownProfile)
+            return cell
+        } else {
+            //Do the photos
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "imageCell", for: indexPath) as! ImageCell
+            cell.contentImageView.image = UIImage(named: "Club")
+            return cell
+        }
+        
     }
     
     //MARK: - UICollectionViewDelegateFlowLayout
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
         //Get the screen bounds, then the width
         let screen = UIScreen.main.bounds
         let screenWidth: CGFloat = screen.width
-        //Make the cell width ~1/3 of the screen.
-        let cellWidth = screenWidth / 3.02
         
-        return CGSize(width: cellWidth, height: cellWidth)
+        if indexPath.row == 0 {
+            //Only do this if it is the information cell
+            return CGSize(width: screenWidth, height: 170.0)
+        } else {
+            //Only do this if it is the image
+            //Make the cell width ~1/3 of the screen.
+            let cellWidth = screenWidth / 3.02
+            
+            return CGSize(width: cellWidth, height: cellWidth)
+        }
+        
+        
     }
     
-
+    
     // MARK: UICollectionViewDelegate
 
     /*
