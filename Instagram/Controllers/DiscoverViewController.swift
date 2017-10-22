@@ -63,13 +63,13 @@ class DiscoverViewController: UICollectionViewController, UICollectionViewDelega
     //MARK: - UICollectionViewDelegateFlowLayout
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        //Get the screen bounds, then the width
         let screen = UIScreen.main.bounds
         let screenWidth: CGFloat = screen.width
+        //Make the cell width ~1/3 of the screen.
         let cellWidth = screenWidth / 3.02
         
         return CGSize(width: cellWidth, height: cellWidth)
-        
-        
     }
     
 
