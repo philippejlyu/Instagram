@@ -13,11 +13,13 @@
 		AD4368601F9AF55B00AA3D73 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD43685E1F9AF55B00AA3D73 /* LaunchScreen.storyboard */; };
 		AD4368761F9AF5E700AA3D73 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4368751F9AF5E700AA3D73 /* ViewController.swift */; };
 		AD43687A1F9AFB3100AA3D73 /* PostViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4368791F9AFB3100AA3D73 /* PostViewCell.swift */; };
-		AD43687C1F9B104800AA3D73 /* StoriesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD43687B1F9B104800AA3D73 /* StoriesCell.swift */; };
+		ADCCF11F1F9C270F0020ECFB /* StoriesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADCCF11A1F9C270E0020ECFB /* StoriesCell.swift */; };
+		ADCCF1201F9C270F0020ECFB /* ActivityNewFriendViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADCCF11B1F9C270E0020ECFB /* ActivityNewFriendViewCell.swift */; };
+		ADCCF1211F9C270F0020ECFB /* ActivityLikeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADCCF11C1F9C270E0020ECFB /* ActivityLikeCell.swift */; };
+		ADCCF1221F9C270F0020ECFB /* DiscoverCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADCCF11D1F9C270F0020ECFB /* DiscoverCell.swift */; };
+		ADCCF1231F9C270F0020ECFB /* ActivityFollowingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADCCF11E1F9C270F0020ECFB /* ActivityFollowingCell.swift */; };
 		ADE638C21F9C11660070709F /* ActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE638C11F9C11660070709F /* ActivityViewController.swift */; };
-		ADE638C41F9C11810070709F /* ActivityLikeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE638C31F9C11810070709F /* ActivityLikeCell.swift */; };
-		ADE638C61F9C119A0070709F /* ActivityFollowingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE638C51F9C119A0070709F /* ActivityFollowingCell.swift */; };
-		ADE638C81F9C11AE0070709F /* ActivityNewFriendViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE638C71F9C11AE0070709F /* ActivityNewFriendViewCell.swift */; };
+		ADE638CB1F9C19330070709F /* DiscoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE638CA1F9C19330070709F /* DiscoverViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,11 +31,13 @@
 		AD4368611F9AF55B00AA3D73 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AD4368751F9AF5E700AA3D73 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		AD4368791F9AFB3100AA3D73 /* PostViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewCell.swift; sourceTree = "<group>"; };
-		AD43687B1F9B104800AA3D73 /* StoriesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoriesCell.swift; sourceTree = "<group>"; };
+		ADCCF11A1F9C270E0020ECFB /* StoriesCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoriesCell.swift; sourceTree = "<group>"; };
+		ADCCF11B1F9C270E0020ECFB /* ActivityNewFriendViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityNewFriendViewCell.swift; sourceTree = "<group>"; };
+		ADCCF11C1F9C270E0020ECFB /* ActivityLikeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityLikeCell.swift; sourceTree = "<group>"; };
+		ADCCF11D1F9C270F0020ECFB /* DiscoverCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscoverCell.swift; sourceTree = "<group>"; };
+		ADCCF11E1F9C270F0020ECFB /* ActivityFollowingCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityFollowingCell.swift; sourceTree = "<group>"; };
 		ADE638C11F9C11660070709F /* ActivityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityViewController.swift; sourceTree = "<group>"; };
-		ADE638C31F9C11810070709F /* ActivityLikeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityLikeCell.swift; sourceTree = "<group>"; };
-		ADE638C51F9C119A0070709F /* ActivityFollowingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityFollowingCell.swift; sourceTree = "<group>"; };
-		ADE638C71F9C11AE0070709F /* ActivityNewFriendViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityNewFriendViewCell.swift; sourceTree = "<group>"; };
+		ADE638CA1F9C19330070709F /* DiscoverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,10 +83,11 @@
 		AD4368771F9AF60D00AA3D73 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				AD4368791F9AFB3100AA3D73 /* PostViewCell.swift */,
 				AD4368751F9AF5E700AA3D73 /* ViewController.swift */,
+				ADE638CA1F9C19330070709F /* DiscoverViewController.swift */,
+				AD4368791F9AFB3100AA3D73 /* PostViewCell.swift */,
 				ADE638C11F9C11660070709F /* ActivityViewController.swift */,
-				ADE638C91F9C11B60070709F /* Cells */,
+				ADCCF1191F9C26FD0020ECFB /* Cells */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -95,16 +100,16 @@
 			path = Storyboards;
 			sourceTree = "<group>";
 		};
-		ADE638C91F9C11B60070709F /* Cells */ = {
+		ADCCF1191F9C26FD0020ECFB /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				AD43687B1F9B104800AA3D73 /* StoriesCell.swift */,
-				ADE638C31F9C11810070709F /* ActivityLikeCell.swift */,
-				ADE638C51F9C119A0070709F /* ActivityFollowingCell.swift */,
-				ADE638C71F9C11AE0070709F /* ActivityNewFriendViewCell.swift */,
+				ADCCF11E1F9C270F0020ECFB /* ActivityFollowingCell.swift */,
+				ADCCF11C1F9C270E0020ECFB /* ActivityLikeCell.swift */,
+				ADCCF11B1F9C270E0020ECFB /* ActivityNewFriendViewCell.swift */,
+				ADCCF11D1F9C270F0020ECFB /* DiscoverCell.swift */,
+				ADCCF11A1F9C270E0020ECFB /* StoriesCell.swift */,
 			);
-			name = Cells;
-			path = "New Group";
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -179,13 +184,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ADE638CB1F9C19330070709F /* DiscoverViewController.swift in Sources */,
 				AD43687A1F9AFB3100AA3D73 /* PostViewCell.swift in Sources */,
-				AD43687C1F9B104800AA3D73 /* StoriesCell.swift in Sources */,
+				ADCCF1201F9C270F0020ECFB /* ActivityNewFriendViewCell.swift in Sources */,
+				ADCCF1211F9C270F0020ECFB /* ActivityLikeCell.swift in Sources */,
+				ADCCF1231F9C270F0020ECFB /* ActivityFollowingCell.swift in Sources */,
+				ADCCF1221F9C270F0020ECFB /* DiscoverCell.swift in Sources */,
 				AD4368761F9AF5E700AA3D73 /* ViewController.swift in Sources */,
-				ADE638C41F9C11810070709F /* ActivityLikeCell.swift in Sources */,
-				ADE638C81F9C11AE0070709F /* ActivityNewFriendViewCell.swift in Sources */,
+				ADCCF11F1F9C270F0020ECFB /* StoriesCell.swift in Sources */,
 				ADE638C21F9C11660070709F /* ActivityViewController.swift in Sources */,
-				ADE638C61F9C119A0070709F /* ActivityFollowingCell.swift in Sources */,
 				AD4368561F9AF55B00AA3D73 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
