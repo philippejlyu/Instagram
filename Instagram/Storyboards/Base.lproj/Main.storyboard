@@ -345,15 +345,16 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gvh-jd-fZJ">
-                                            <rect key="frame" x="49" y="18" width="225" height="21"/>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qJg-Hr-2ur">
+                                            <rect key="frame" x="49" y="13" width="225" height="30"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="225" id="SPu-d8-NNM"/>
+                                                <constraint firstAttribute="width" constant="225" id="ddF-n0-S72"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
+                                            <state key="normal" title="Button"/>
+                                            <connections>
+                                                <action selector="usernameClicked" destination="ccJ-lR-zPp" eventType="touchUpInside" id="0h9-nu-fin"/>
+                                            </connections>
+                                        </button>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="zg0-e7-41G" firstAttribute="top" secondItem="uGR-Ak-mOr" secondAttribute="bottom" constant="8" id="031-QA-jyr"/>
@@ -363,6 +364,7 @@
                                         <constraint firstAttribute="trailing" secondItem="zg0-e7-41G" secondAttribute="trailing" constant="8" id="8yO-is-rav"/>
                                         <constraint firstItem="uGR-Ak-mOr" firstAttribute="top" secondItem="djN-lF-ezK" secondAttribute="bottom" constant="8" id="AZL-FJ-Y1a"/>
                                         <constraint firstItem="f61-DK-bIP" firstAttribute="top" secondItem="djN-lF-ezK" secondAttribute="bottom" constant="8" id="Azl-si-wZ0"/>
+                                        <constraint firstItem="qJg-Hr-2ur" firstAttribute="leading" secondItem="BCP-ES-RaY" secondAttribute="trailing" constant="8" id="BbX-Bp-20N"/>
                                         <constraint firstItem="BCP-ES-RaY" firstAttribute="leading" secondItem="Rqk-Cr-v0C" secondAttribute="leadingMargin" constant="-7" id="DEt-Gp-YWw"/>
                                         <constraint firstItem="djN-lF-ezK" firstAttribute="leading" secondItem="Rqk-Cr-v0C" secondAttribute="leading" id="KPT-jT-bTg"/>
                                         <constraint firstAttribute="trailing" secondItem="fSm-0X-eVU" secondAttribute="trailing" constant="8" id="KXr-GC-C2R"/>
@@ -371,9 +373,8 @@
                                         <constraint firstItem="zg0-e7-41G" firstAttribute="leading" secondItem="Rqk-Cr-v0C" secondAttribute="leading" constant="8" id="d5t-0e-JOC"/>
                                         <constraint firstItem="fSm-0X-eVU" firstAttribute="top" secondItem="Rqk-Cr-v0C" secondAttribute="top" constant="23" id="dbe-k9-Xao"/>
                                         <constraint firstItem="BCP-ES-RaY" firstAttribute="top" secondItem="Rqk-Cr-v0C" secondAttribute="topMargin" id="hxr-Xs-iJn"/>
-                                        <constraint firstItem="gvh-jd-fZJ" firstAttribute="leading" secondItem="BCP-ES-RaY" secondAttribute="trailing" constant="8" id="mHv-tM-iZG"/>
+                                        <constraint firstItem="qJg-Hr-2ur" firstAttribute="top" secondItem="Rqk-Cr-v0C" secondAttribute="top" constant="13" id="kQL-1e-a70"/>
                                         <constraint firstAttribute="trailing" secondItem="djN-lF-ezK" secondAttribute="trailing" id="n97-ni-U55"/>
-                                        <constraint firstItem="gvh-jd-fZJ" firstAttribute="top" secondItem="Rqk-Cr-v0C" secondAttribute="top" constant="18" id="tYt-aV-EDz"/>
                                         <constraint firstItem="hZ3-bo-Yec" firstAttribute="top" secondItem="djN-lF-ezK" secondAttribute="bottom" constant="8" id="yO0-E1-bhN"/>
                                         <constraint firstItem="djN-lF-ezK" firstAttribute="top" secondItem="BCP-ES-RaY" secondAttribute="bottom" constant="8" id="zsl-pP-Xjj"/>
                                     </constraints>
@@ -383,7 +384,7 @@
                                     <outlet property="contentImageView" destination="djN-lF-ezK" id="2Yn-Ag-ZJZ"/>
                                     <outlet property="likeButton" destination="uGR-Ak-mOr" id="pr4-6N-acy"/>
                                     <outlet property="profileImageView" destination="BCP-ES-RaY" id="9Yw-X8-12e"/>
-                                    <outlet property="usernameLabel" destination="gvh-jd-fZJ" id="TWB-Ro-PX3"/>
+                                    <outlet property="usernameButton" destination="qJg-Hr-2ur" id="U6Z-35-tGS"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -396,10 +397,13 @@
                         <barButtonItem key="leftBarButtonItem" title="Item" id="OeB-Yj-wtv"/>
                         <barButtonItem key="rightBarButtonItem" title="Item" id="naU-RI-OE1"/>
                     </navigationItem>
+                    <connections>
+                        <segue destination="4Di-pC-feV" kind="show" identifier="showProfile" id="pqd-wj-0Rl"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PpU-fq-uzR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="998" y="-1355"/>
+            <point key="canvasLocation" x="997.60000000000002" y="-1355.1724137931035"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="g1N-4E-V2V">
@@ -654,7 +658,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zKn-fx-gXW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="997.60000000000002" y="706.59670164917543"/>
+            <point key="canvasLocation" x="2058" y="-342"/>
         </scene>
         <!--Profile-->
         <scene sceneID="37N-aZ-sgw">
@@ -681,6 +685,6 @@
         <image name="Hero" width="2318" height="1410"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="x3z-dB-jBa"/>
+        <segue reference="pqd-wj-0Rl"/>
     </inferredMetricsTieBreakers>
 </document>

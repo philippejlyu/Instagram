@@ -12,12 +12,12 @@ class ProfileViewController: UICollectionViewController, UICollectionViewDelegat
 
     //MARK: - Properties
     var ownProfile = true
-    
+    var username = "someonecalledphilippe"
     
     //MARK: - View lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.title = username
     }
     
     /*

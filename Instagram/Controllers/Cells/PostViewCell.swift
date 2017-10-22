@@ -10,12 +10,15 @@ import UIKit
 
 class PostViewCell: UITableViewCell {
     
+    //MARK: - Properties
+    var delegate: PostCellDelegate!
+    
     //MARK: - Outlets
     @IBOutlet weak var captionLabelView: UILabel!
     @IBOutlet weak var likeButton: UIButton!
     @IBOutlet weak var contentImageView: UIImageView!
-    @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var profileImageView: UIImageView!
+    @IBOutlet weak var usernameButton: UIButton!
     
     //MARK: - Lifecycle
     override func awakeFromNib() {
@@ -29,9 +32,14 @@ class PostViewCell: UITableViewCell {
     
     func setOutlets(profileImage: UIImage, username: String, contentImage: UIImage, caption: String) {
         self.profileImageView.image = profileImage
-        self.usernameLabel.text = username
         self.contentImageView.image = contentImage
+        self.usernameButton.setTitle(username, for: .normal)
         self.captionLabelView.text = "\(username): \(caption)"
+    }
+    
+    @IBAction func usernameClicked() {
+        delegate.willOpenProfile(named: (usernameButton.titleLabel?.text)!)
+        
     }
     
     
