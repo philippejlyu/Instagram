@@ -11,7 +11,7 @@ import UIKit
 class ProfileViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
 
     //MARK: - Properties
-    var ownProfile = false
+    var ownProfile = true
     
     
     //MARK: - View lifecycle
