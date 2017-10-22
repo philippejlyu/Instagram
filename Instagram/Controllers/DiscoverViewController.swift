@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DiscoverViewController: UICollectionViewController {
+class DiscoverViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,7 +52,6 @@ class DiscoverViewController: UICollectionViewController {
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        print("Setup the cell")
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "imageCell", for: indexPath) as! DiscoverCell
         cell.contentImageView.image = UIImage(named: "Club")
     
@@ -60,6 +59,19 @@ class DiscoverViewController: UICollectionViewController {
     
         return cell
     }
+    
+    //MARK: - UICollectionViewDelegateFlowLayout
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let screen = UIScreen.main.bounds
+        let screenWidth: CGFloat = screen.width
+        let cellWidth = screenWidth / 3.02
+        
+        return CGSize(width: cellWidth, height: cellWidth)
+        
+        
+    }
+    
 
     // MARK: UICollectionViewDelegate
 

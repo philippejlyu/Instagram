@@ -36,7 +36,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Nh7-AU-YjC">
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="1" minimumInteritemSpacing="1" id="Nh7-AU-YjC">
                             <size key="itemSize" width="130" height="130"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -61,7 +61,6 @@
                                     <constraint firstItem="w3U-HC-Imb" firstAttribute="top" secondItem="shQ-DN-Ght" secondAttribute="top" id="kdP-xI-0OT"/>
                                     <constraint firstItem="w3U-HC-Imb" firstAttribute="leading" secondItem="shQ-DN-Ght" secondAttribute="leading" id="uyh-Gv-hZx"/>
                                 </constraints>
-                                <size key="customSize" width="130" height="130"/>
                                 <connections>
                                     <outlet property="contentImageView" destination="w3U-HC-Imb" id="4T4-v4-oZo"/>
                                 </connections>
