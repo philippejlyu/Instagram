@@ -18,6 +18,7 @@
 		ADE638C41F9C11810070709F /* ActivityLikeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE638C31F9C11810070709F /* ActivityLikeCell.swift */; };
 		ADE638C61F9C119A0070709F /* ActivityFollowingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE638C51F9C119A0070709F /* ActivityFollowingCell.swift */; };
 		ADE638C81F9C11AE0070709F /* ActivityNewFriendViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE638C71F9C11AE0070709F /* ActivityNewFriendViewCell.swift */; };
+		ADE638CB1F9C19330070709F /* DiscoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE638CA1F9C19330070709F /* DiscoverViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		ADE638C31F9C11810070709F /* ActivityLikeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityLikeCell.swift; sourceTree = "<group>"; };
 		ADE638C51F9C119A0070709F /* ActivityFollowingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityFollowingCell.swift; sourceTree = "<group>"; };
 		ADE638C71F9C11AE0070709F /* ActivityNewFriendViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityNewFriendViewCell.swift; sourceTree = "<group>"; };
+		ADE638CA1F9C19330070709F /* DiscoverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,8 +81,9 @@
 		AD4368771F9AF60D00AA3D73 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				AD4368791F9AFB3100AA3D73 /* PostViewCell.swift */,
 				AD4368751F9AF5E700AA3D73 /* ViewController.swift */,
+				ADE638CA1F9C19330070709F /* DiscoverViewController.swift */,
+				AD4368791F9AFB3100AA3D73 /* PostViewCell.swift */,
 				ADE638C11F9C11660070709F /* ActivityViewController.swift */,
 				ADE638C91F9C11B60070709F /* Cells */,
 			);
@@ -179,6 +182,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ADE638CB1F9C19330070709F /* DiscoverViewController.swift in Sources */,
 				AD43687A1F9AFB3100AA3D73 /* PostViewCell.swift in Sources */,
 				AD43687C1F9B104800AA3D73 /* StoriesCell.swift in Sources */,
 				AD4368761F9AF5E700AA3D73 /* ViewController.swift in Sources */,

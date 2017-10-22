@@ -28,28 +28,29 @@
             </objects>
             <point key="canvasLocation" x="-506" y="-342"/>
         </scene>
-        <!--Collection View Controller-->
+        <!--Discover-->
         <scene sceneID="XmX-0y-M6k">
             <objects>
-                <collectionViewController id="6zl-Xr-fcW" sceneMemberID="viewController">
+                <collectionViewController id="6zl-Xr-fcW" customClass="DiscoverViewController" customModule="Instagram" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="r7k-td-XrK">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="dTd-Bn-Gb9">
-                            <size key="itemSize" width="50" height="50"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Nh7-AU-YjC">
+                            <size key="itemSize" width="130" height="130"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="shQ-DN-Ght">
-                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="imageCell" id="shQ-DN-Ght">
+                                <rect key="frame" x="0.0" y="0.0" width="130" height="130"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="130" height="130"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </view>
+                                <size key="customSize" width="130" height="130"/>
                             </collectionViewCell>
                         </cells>
                         <connections>
@@ -57,11 +58,11 @@
                             <outlet property="delegate" destination="6zl-Xr-fcW" id="MPp-Ew-Eyh"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" id="Uhp-jO-xwL"/>
+                    <navigationItem key="navigationItem" title="Discover" id="Uhp-jO-xwL"/>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0E9-T6-qKr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="961" y="45"/>
+            <point key="canvasLocation" x="960.79999999999995" y="44.527736131934034"/>
         </scene>
         <!--Activity-->
         <scene sceneID="Wxd-BY-pZH">
