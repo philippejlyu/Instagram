@@ -8,8 +8,6 @@
 
 import UIKit
 
-private let reuseIdentifier = "imageCell"
-
 class DiscoverViewController: UICollectionViewController {
 
     override func viewDidLoad() {
@@ -55,7 +53,8 @@ class DiscoverViewController: UICollectionViewController {
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         print("Setup the cell")
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "imageCell", for: indexPath) as! DiscoverCell
+        cell.contentImageView.image = UIImage(named: "Club")
     
         // Configure the cell
     
