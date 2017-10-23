@@ -12,10 +12,20 @@ class ViewController: UITableViewController, PostCellDelegate {
     
     //MARK: - Properties
     var usernameToSend = ""
+    var posts = [Post]()
     
     //MARK: - View lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //Pretend to parse the json here...
+        let url = URL(string: "http://programming.bmss.me/Images/Club-Logo.png")
+        let postOne = Post(imageURL: url!, caption: "This is a beautiful picture", username: "BMSSProgramming", userProfilePic: url!)
+        let postTwo = Post(imageURL: url!, caption: "Come join the programming club", username: "BMSSProgramming", userProfilePic: url!)
+        let postThree = Post(imageURL: url!, caption: "Look at my new computer", username: "someonecalledphilippe", userProfilePic: url!)
+        posts.append(postOne)
+        posts.append(postTwo)
+        posts.append(postThree)
         
     }
 
@@ -23,8 +33,8 @@ class ViewController: UITableViewController, PostCellDelegate {
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 5
+        // Add 1 to # of posts because of the stories.
+        return posts.count + 1
     }
 
     
@@ -37,7 +47,9 @@ class ViewController: UITableViewController, PostCellDelegate {
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! PostViewCell
             cell.delegate = self
-            cell.setOutlets(profileImage: UIImage(named: "Club")!, username: "BMSSProgramming", contentImage: UIImage(named: "Hero")!, caption: "Join the programming club")
+            let postRef = posts[indexPath.row-1] //Subtract one because of stories
+            
+            cell.setOutlets(profileImage: UIImage(named: "Club")!, username: postRef.username, contentImage: UIImage(named: "Hero")!, caption: postRef.caption)
             
             return cell
         }

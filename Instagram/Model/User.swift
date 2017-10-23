@@ -8,20 +8,11 @@
 
 import UIKit
 
-class User: Codable {
-    //MARK: - Properties
+struct User: Codable {
     var followers: Int
     var posts: [Post]
     var following: Int
-    var profilePic: String
-    
-    //MARK: - Initializers
-    init(followers: Int, posts: [Post], following: Int, profilePic: String) {
-        self.followers = followers
-        self.posts = posts
-        self.followers = followers
-        self.following = following
-        self.profilePic = profilePic
-    }
-    
+    var profilePic: URL
+    var description: String
+    var realName: String
 }

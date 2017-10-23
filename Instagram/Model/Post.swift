@@ -8,17 +8,10 @@
 
 import UIKit
 
-class Post: Codable {
-    
-    //MARK: - Properties
-    var imageURL: String
+struct Post: Codable {
+    var imageURL: URL
     var caption: String
-    var poster: String
+    var username: String
+    var userProfilePic: URL
     
-    //MARK: - Initializers
-    init(imageURL: String, caption: String, poster: String) {
-        self.imageURL = imageURL
-        self.caption = caption
-        self.poster = poster
-    }
 }
