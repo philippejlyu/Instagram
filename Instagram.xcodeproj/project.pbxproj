@@ -20,6 +20,8 @@
 		ADCCF1211F9C270F0020ECFB /* ActivityLikeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADCCF11C1F9C270E0020ECFB /* ActivityLikeCell.swift */; };
 		ADCCF1221F9C270F0020ECFB /* ImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADCCF11D1F9C270F0020ECFB /* ImageCell.swift */; };
 		ADCCF1231F9C270F0020ECFB /* ActivityFollowingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADCCF11E1F9C270F0020ECFB /* ActivityFollowingCell.swift */; };
+		ADE0E5271F9D67F2009672CC /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE0E5261F9D67F2009672CC /* Post.swift */; };
+		ADE0E5291F9D6801009672CC /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE0E5281F9D6801009672CC /* User.swift */; };
 		ADE638C21F9C11660070709F /* ActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE638C11F9C11660070709F /* ActivityViewController.swift */; };
 		ADE638CB1F9C19330070709F /* DiscoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE638CA1F9C19330070709F /* DiscoverViewController.swift */; };
 /* End PBXBuildFile section */
@@ -40,6 +42,8 @@
 		ADCCF11C1F9C270E0020ECFB /* ActivityLikeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityLikeCell.swift; sourceTree = "<group>"; };
 		ADCCF11D1F9C270F0020ECFB /* ImageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCell.swift; sourceTree = "<group>"; };
 		ADCCF11E1F9C270F0020ECFB /* ActivityFollowingCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityFollowingCell.swift; sourceTree = "<group>"; };
+		ADE0E5261F9D67F2009672CC /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		ADE0E5281F9D6801009672CC /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		ADE638C11F9C11660070709F /* ActivityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityViewController.swift; sourceTree = "<group>"; };
 		ADE638CA1F9C19330070709F /* DiscoverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -87,6 +91,7 @@
 				AD4368551F9AF55B00AA3D73 /* AppDelegate.swift */,
 				AD4368781F9AF61D00AA3D73 /* Storyboards */,
 				AD4368771F9AF60D00AA3D73 /* Controllers */,
+				ADE0E52A1F9D6810009672CC /* Model */,
 				AD43685C1F9AF55B00AA3D73 /* Assets.xcassets */,
 				AD43685E1F9AF55B00AA3D73 /* LaunchScreen.storyboard */,
 				AD4368611F9AF55B00AA3D73 /* Info.plist */,
@@ -124,6 +129,15 @@
 				AD29DB7F1F9D235D004F1539 /* ProfileCell.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		ADE0E52A1F9D6810009672CC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				ADE0E5281F9D6801009672CC /* User.swift */,
+				ADE0E5261F9D67F2009672CC /* Post.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -202,7 +216,9 @@
 				AD43687A1F9AFB3100AA3D73 /* PostViewCell.swift in Sources */,
 				ADCCF1201F9C270F0020ECFB /* ActivityNewFriendViewCell.swift in Sources */,
 				ADCCF1211F9C270F0020ECFB /* ActivityLikeCell.swift in Sources */,
+				ADE0E5271F9D67F2009672CC /* Post.swift in Sources */,
 				ADCCF1231F9C270F0020ECFB /* ActivityFollowingCell.swift in Sources */,
+				ADE0E5291F9D6801009672CC /* User.swift in Sources */,
 				ADCCF1221F9C270F0020ECFB /* ImageCell.swift in Sources */,
 				AD29DB7C1F9D2170004F1539 /* ProfileViewController.swift in Sources */,
 				AD4368761F9AF5E700AA3D73 /* ViewController.swift in Sources */,
