@@ -40,10 +40,21 @@ class PostViewCell: UITableViewCell {
     func downloadImage(url: URL) {
         let request = URLRequest(url: url)
         
+         let session = URLSession.shared
+         let task = session.dataTask(with: request) { (data, response, error) in
+         guard let imageData = data else { return }
+            DispatchQueue.main.async {
+                self.contentImageView.image = UIImage(data: imageData)
+            }
+         }
+        task.resume()
+ 
+        /*
         NSURLConnection.sendAsynchronousRequest(request, queue: .main) { (response, data, error) in
             guard let data = data else { return }
             self.contentImageView.image = UIImage(data: data)
         }
+         */
     }
     
     @IBAction func usernameClicked() {
