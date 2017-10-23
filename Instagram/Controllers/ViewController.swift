@@ -49,7 +49,7 @@ class ViewController: UITableViewController, PostCellDelegate {
             cell.delegate = self
             let postRef = posts[indexPath.row-1] //Subtract one because of stories
             
-            cell.setOutlets(profileImage: UIImage(named: "Club")!, username: postRef.username, contentImage: UIImage(named: "Hero")!, caption: postRef.caption)
+            cell.setOutlets(profileImage: UIImage(named: "Club")!, username: postRef.username, contentImage: UIImage(named: "Hero")!, caption: postRef.caption, imageURL: postRef.imageURL)
             
             return cell
         }

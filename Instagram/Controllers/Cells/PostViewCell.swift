@@ -30,11 +30,20 @@ class PostViewCell: UITableViewCell {
     
     //MARK: - Setting up
     
-    func setOutlets(profileImage: UIImage, username: String, contentImage: UIImage, caption: String) {
+    func setOutlets(profileImage: UIImage, username: String, contentImage: UIImage, caption: String, imageURL: URL) {
         self.profileImageView.image = profileImage
-        self.contentImageView.image = contentImage
         self.usernameButton.setTitle(username, for: .normal)
         self.captionLabelView.text = "\(username): \(caption)"
+        downloadImage(url: imageURL)
+    }
+    
+    func downloadImage(url: URL) {
+        let request = URLRequest(url: url)
+        
+        NSURLConnection.sendAsynchronousRequest(request, queue: .main) { (response, data, error) in
+            guard let data = data else { return }
+            self.contentImageView.image = UIImage(data: data)
+        }
     }
     
     @IBAction func usernameClicked() {

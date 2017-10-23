@@ -318,7 +318,7 @@
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="detailDisclosure" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fSm-0X-eVU">
                                             <rect key="frame" x="345" y="23" width="22" height="22"/>
                                         </button>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="djN-lF-ezK">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="djN-lF-ezK">
                                             <rect key="frame" x="0.0" y="56" width="375" height="316"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="316" id="5kd-b5-0cl"/>
