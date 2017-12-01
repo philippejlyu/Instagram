@@ -30,11 +30,44 @@ class PostViewCell: UITableViewCell {
     
     //MARK: - Setting up
     
-    func setOutlets(profileImage: UIImage, username: String, contentImage: UIImage, caption: String) {
-        self.profileImageView.image = profileImage
-        self.contentImageView.image = contentImage
+    func setOutlets(profileImage: URL, username: String, contentImage: UIImage, caption: String, imageURL: URL) {
         self.usernameButton.setTitle(username, for: .normal)
         self.captionLabelView.text = "\(username): \(caption)"
+        downloadImage(url: imageURL)
+        downloadProfilePic(url: profileImage)
+    }
+    
+    func downloadImage(url: URL) {
+        let request = URLRequest(url: url)
+        
+         let session = URLSession.shared
+         let task = session.dataTask(with: request) { (data, response, error) in
+            DispatchQueue.main.async {
+                guard let imageData = data else { return }
+                self.contentImageView.image = UIImage(data: imageData)
+            }
+         }
+        task.resume()
+ 
+        /*
+        NSURLConnection.sendAsynchronousRequest(request, queue: .main) { (response, data, error) in
+            guard let data = data else { return }
+            self.contentImageView.image = UIImage(data: data)
+        }
+         */
+    }
+    
+    func downloadProfilePic(url: URL) {
+        let request = URLRequest(url: url)
+        let session = URLSession.shared
+        let task = session.dataTask(with: request) { (data, response, error) in
+            DispatchQueue.main.async {
+                guard let imageData = data else { return }
+                self.profileImageView.image = UIImage(data: imageData)
+            }
+            
+        }
+        task.resume()
     }
     
     @IBAction func usernameClicked() {

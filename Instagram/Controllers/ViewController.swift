@@ -4,7 +4,7 @@
 //
 //  Created by Philippe Yu on 2017-10-20.
 //  Copyright © 2017 Philippe Yu. All rights reserved.
-//
+//  http://swiftjson.guide
 
 import UIKit
 
@@ -12,19 +12,21 @@ class ViewController: UITableViewController, PostCellDelegate {
     
     //MARK: - Properties
     var usernameToSend = ""
+    var posts = [Post]()
     
     //MARK: - View lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        let url = Bundle.main.url(forResource: "images", withExtension: "json")
+        getJSONString(url: url!)
     }
 
 
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 5
+        // Add 1 to # of posts because of the stories.
+        return posts.count + 1
     }
 
     
@@ -37,7 +39,11 @@ class ViewController: UITableViewController, PostCellDelegate {
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! PostViewCell
             cell.delegate = self
-            cell.setOutlets(profileImage: UIImage(named: "Club")!, username: "BMSSProgramming", contentImage: UIImage(named: "Hero")!, caption: "Join the programming club")
+            let postRef = posts[indexPath.row-1] //Subtract one because of stories
+            
+            //TODO
+            
+            cell.setOutlets(profileImage: postRef.userProfilePic, username: postRef.username, contentImage: UIImage(named: "Hero")!, caption: postRef.caption, imageURL: postRef.imageURL)
             
             return cell
         }
@@ -72,6 +78,27 @@ class ViewController: UITableViewController, PostCellDelegate {
             dest.ownProfile = false
             dest.username = usernameToSend
         }
+    }
+    
+    //MARK: - JSON Handling functions
+    func getJSONString(url: URL) {
+        do {
+            if let data = NSData(contentsOf: url),
+            let json = try JSONSerialization.jsonObject(with: data as Data) as? [String: Any],
+                let results = json["results"] as? [[String: Any]] {
+                
+                for result in results {
+                    let newPost = Post(imageURL: URL(string: result["imageURL"] as! String)!, caption: result["caption"] as! String, username: result["username"] as! String, userProfilePic: URL(string: result["userProfilePic"] as! String)!)
+                    self.posts.append(newPost)
+                }
+            }
+            
+            
+        } catch {
+            print("ERROR")
+        }
+        
+        self.tableView.reloadData()
     }
     
 
