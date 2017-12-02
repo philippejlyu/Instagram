@@ -15,7 +15,6 @@ class StoriesTableViewCell: UITableViewCell, UICollectionViewDataSource, UIColle
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        print("Initialized the collection view table cell")
         self.collectionView.reloadData()
     }
 
@@ -31,7 +30,6 @@ class StoriesTableViewCell: UITableViewCell, UICollectionViewDataSource, UIColle
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "collectionCell", for: indexPath)
-        print("Loading the collection view")
         
         return cell
     }
