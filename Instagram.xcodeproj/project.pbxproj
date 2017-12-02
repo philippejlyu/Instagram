@@ -16,7 +16,8 @@
 		AD4368601F9AF55B00AA3D73 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD43685E1F9AF55B00AA3D73 /* LaunchScreen.storyboard */; };
 		AD4368761F9AF5E700AA3D73 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4368751F9AF5E700AA3D73 /* ViewController.swift */; };
 		AD43687A1F9AFB3100AA3D73 /* PostViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4368791F9AFB3100AA3D73 /* PostViewCell.swift */; };
-		ADCCF11F1F9C270F0020ECFB /* StoriesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADCCF11A1F9C270E0020ECFB /* StoriesCell.swift */; };
+		AD52AF791FD1EDF2009573AC /* StoriesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD52AF781FD1EDF2009573AC /* StoriesCollectionViewCell.swift */; };
+		ADCCF11F1F9C270F0020ECFB /* StoriesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADCCF11A1F9C270E0020ECFB /* StoriesTableViewCell.swift */; };
 		ADCCF1201F9C270F0020ECFB /* ActivityNewFriendViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADCCF11B1F9C270E0020ECFB /* ActivityNewFriendViewCell.swift */; };
 		ADCCF1211F9C270F0020ECFB /* ActivityLikeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADCCF11C1F9C270E0020ECFB /* ActivityLikeCell.swift */; };
 		ADCCF1221F9C270F0020ECFB /* ImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADCCF11D1F9C270F0020ECFB /* ImageCell.swift */; };
@@ -39,7 +40,8 @@
 		AD4368611F9AF55B00AA3D73 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AD4368751F9AF5E700AA3D73 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		AD4368791F9AFB3100AA3D73 /* PostViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewCell.swift; sourceTree = "<group>"; };
-		ADCCF11A1F9C270E0020ECFB /* StoriesCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoriesCell.swift; sourceTree = "<group>"; };
+		AD52AF781FD1EDF2009573AC /* StoriesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoriesCollectionViewCell.swift; sourceTree = "<group>"; };
+		ADCCF11A1F9C270E0020ECFB /* StoriesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoriesTableViewCell.swift; sourceTree = "<group>"; };
 		ADCCF11B1F9C270E0020ECFB /* ActivityNewFriendViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityNewFriendViewCell.swift; sourceTree = "<group>"; };
 		ADCCF11C1F9C270E0020ECFB /* ActivityLikeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityLikeCell.swift; sourceTree = "<group>"; };
 		ADCCF11D1F9C270F0020ECFB /* ImageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCell.swift; sourceTree = "<group>"; };
@@ -128,7 +130,8 @@
 				AD29DB7E1F9D233C004F1539 /* Activity Cells */,
 				ADCCF11D1F9C270F0020ECFB /* ImageCell.swift */,
 				AD4368791F9AFB3100AA3D73 /* PostViewCell.swift */,
-				ADCCF11A1F9C270E0020ECFB /* StoriesCell.swift */,
+				ADCCF11A1F9C270E0020ECFB /* StoriesTableViewCell.swift */,
+				AD52AF781FD1EDF2009573AC /* StoriesCollectionViewCell.swift */,
 				AD29DB7F1F9D235D004F1539 /* ProfileCell.swift */,
 			);
 			path = Cells;
@@ -219,6 +222,7 @@
 				ADE638CB1F9C19330070709F /* DiscoverViewController.swift in Sources */,
 				AD43687A1F9AFB3100AA3D73 /* PostViewCell.swift in Sources */,
 				ADCCF1201F9C270F0020ECFB /* ActivityNewFriendViewCell.swift in Sources */,
+				AD52AF791FD1EDF2009573AC /* StoriesCollectionViewCell.swift in Sources */,
 				ADCCF1211F9C270F0020ECFB /* ActivityLikeCell.swift in Sources */,
 				ADE0E5271F9D67F2009672CC /* Post.swift in Sources */,
 				ADCCF1231F9C270F0020ECFB /* ActivityFollowingCell.swift in Sources */,
@@ -226,7 +230,7 @@
 				ADCCF1221F9C270F0020ECFB /* ImageCell.swift in Sources */,
 				AD29DB7C1F9D2170004F1539 /* ProfileViewController.swift in Sources */,
 				AD4368761F9AF5E700AA3D73 /* ViewController.swift in Sources */,
-				ADCCF11F1F9C270F0020ECFB /* StoriesCell.swift in Sources */,
+				ADCCF11F1F9C270F0020ECFB /* StoriesTableViewCell.swift in Sources */,
 				AD29DB801F9D235D004F1539 /* ProfileCell.swift in Sources */,
 				ADE638C21F9C11660070709F /* ActivityViewController.swift in Sources */,
 				AD4368561F9AF55B00AA3D73 /* AppDelegate.swift in Sources */,

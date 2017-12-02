@@ -260,7 +260,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="storiesCell" rowHeight="94" id="Fbd-aY-YAk" userLabel="StoriesCell">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="storiesCell" rowHeight="94" id="Fbd-aY-YAk" userLabel="StoriesCell" customClass="StoriesTableViewCell" customModule="Instagram" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="94"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Fbd-aY-YAk" id="yYX-3W-0id">
@@ -273,9 +273,8 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ipN-Jo-ZqS">
+                                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ipN-Jo-ZqS">
                                             <rect key="frame" x="10" y="29" width="350" height="58"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="0Ev-eJ-5MX">
                                                 <size key="itemSize" width="50" height="50"/>
@@ -284,22 +283,47 @@
                                                 <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                             </collectionViewFlowLayout>
                                             <cells>
-                                                <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="bAV-5y-08p">
+                                                <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="collectionCell" id="bAV-5y-08p" customClass="StoriesCollectionViewCell" customModule="Instagram" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                                         <autoresizingMask key="autoresizingMask"/>
+                                                        <subviews>
+                                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Club" translatesAutoresizingMaskIntoConstraints="NO" id="q6e-CT-xY4">
+                                                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                            </imageView>
+                                                        </subviews>
                                                     </view>
+                                                    <constraints>
+                                                        <constraint firstAttribute="trailing" secondItem="q6e-CT-xY4" secondAttribute="trailing" id="dc7-iL-ExX"/>
+                                                        <constraint firstItem="q6e-CT-xY4" firstAttribute="leading" secondItem="bAV-5y-08p" secondAttribute="leading" id="in7-2t-s2r"/>
+                                                        <constraint firstItem="q6e-CT-xY4" firstAttribute="top" secondItem="bAV-5y-08p" secondAttribute="top" id="jRx-hE-N8c"/>
+                                                        <constraint firstAttribute="bottom" secondItem="q6e-CT-xY4" secondAttribute="bottom" id="xzm-KO-Tax"/>
+                                                    </constraints>
+                                                    <connections>
+                                                        <outlet property="storyImageView" destination="q6e-CT-xY4" id="BlK-M0-sNi"/>
+                                                    </connections>
                                                 </collectionViewCell>
                                             </cells>
+                                            <connections>
+                                                <outlet property="dataSource" destination="Fbd-aY-YAk" id="TgZ-G9-dkl"/>
+                                                <outlet property="delegate" destination="Fbd-aY-YAk" id="0cu-Cd-NHr"/>
+                                            </connections>
                                         </collectionView>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstItem="ipN-Jo-ZqS" firstAttribute="top" secondItem="6BQ-ic-gNq" secondAttribute="bottom" constant="2" id="9Vc-1F-Iro"/>
                                         <constraint firstItem="6BQ-ic-gNq" firstAttribute="leading" secondItem="yYX-3W-0id" secondAttribute="leadingMargin" id="JAb-OF-dXm"/>
+                                        <constraint firstItem="ipN-Jo-ZqS" firstAttribute="leading" secondItem="yYX-3W-0id" secondAttribute="leading" constant="10" id="bTd-ib-ALy"/>
+                                        <constraint firstAttribute="bottom" secondItem="ipN-Jo-ZqS" secondAttribute="bottom" constant="6.5" id="gFG-6J-Non"/>
+                                        <constraint firstAttribute="trailing" secondItem="ipN-Jo-ZqS" secondAttribute="trailing" constant="15" id="lLG-2a-law"/>
                                         <constraint firstItem="6BQ-ic-gNq" firstAttribute="top" secondItem="yYX-3W-0id" secondAttribute="topMargin" id="sDE-4M-wtt"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="collectionView" destination="ipN-Jo-ZqS" id="Myg-MT-AZX"/>
+                                </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="485" id="ccJ-lR-zPp" userLabel="PostCell" customClass="PostViewCell" customModule="Instagram" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="122" width="375" height="485"/>
