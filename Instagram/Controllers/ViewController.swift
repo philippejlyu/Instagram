@@ -33,7 +33,7 @@ class ViewController: UITableViewController, PostCellDelegate {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         if indexPath.row == 0 {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "storiesCell", for: indexPath)
+            let cell = tableView.dequeueReusableCell(withIdentifier: "storiesCell", for: indexPath) as! StoriesTableViewCell
             
             return cell
         } else {
@@ -102,6 +102,20 @@ class ViewController: UITableViewController, PostCellDelegate {
     }
     
 
+}
+
+extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 5
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "storiesCell", for: indexPath) as! StoriesCollectionViewCell
+        
+        return cell
+    }
+    
+    
 }
 
 protocol PostCellDelegate {
