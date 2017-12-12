@@ -13,12 +13,13 @@ class ViewController: UITableViewController, PostCellDelegate {
     //MARK: - Properties
     var usernameToSend = ""
     var posts = [Post]()
+    let dataManager = DataManager()
     
     //MARK: - View lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         let url = Bundle.main.url(forResource: "images", withExtension: "json")
-        getJSONString(url: url!)
+        self.posts = dataManager.getJSONString(url!)
     }
 
 
@@ -78,44 +79,8 @@ class ViewController: UITableViewController, PostCellDelegate {
             dest.ownProfile = false
             dest.username = usernameToSend
         }
-    }
-    
-    //MARK: - JSON Handling functions
-    func getJSONString(url: URL) {
-        do {
-            if let data = NSData(contentsOf: url),
-            let json = try JSONSerialization.jsonObject(with: data as Data) as? [String: Any],
-                let results = json["results"] as? [[String: Any]] {
-                
-                for result in results {
-                    let newPost = Post(imageURL: URL(string: result["imageURL"] as! String)!, caption: result["caption"] as! String, username: result["username"] as! String, userProfilePic: URL(string: result["userProfilePic"] as! String)!)
-                    self.posts.append(newPost)
-                }
-            }
-            
-            
-        } catch {
-            print("ERROR")
-        }
-        
-        self.tableView.reloadData()
-    }
-    
+    }   
 
-}
-
-extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "storiesCell", for: indexPath) as! StoriesCollectionViewCell
-        
-        return cell
-    }
-    
-    
 }
 
 protocol PostCellDelegate {
