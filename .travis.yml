@@ -1,0 +1,5 @@
+language: swift
+xcode_project: Instagram.xcodeproj # path to your xcodeproj folder
+xcode_scheme: Instagram
+osx_image: xcode9.2
+os: "iOS 11.2"
