@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		AD27219C1FE060B400066512 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD27219B1FE060B400066512 /* DataManager.swift */; };
 		AD27219E1FE061BF00066512 /* ViewController+UICollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD27219D1FE061BF00066512 /* ViewController+UICollectionView.swift */; };
+		AD2721A01FE0623000066512 /* PostCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD27219F1FE0623000066512 /* PostCellDelegate.swift */; };
 		AD29DB7C1F9D2170004F1539 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD29DB7B1F9D2170004F1539 /* ProfileViewController.swift */; };
 		AD29DB801F9D235D004F1539 /* ProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD29DB7F1F9D235D004F1539 /* ProfileCell.swift */; };
 		AD32F38A1FCDDAF000DCBB1D /* images.json in Resources */ = {isa = PBXBuildFile; fileRef = AD32F3891FCDDAEF00DCBB1D /* images.json */; };
@@ -33,6 +34,7 @@
 /* Begin PBXFileReference section */
 		AD27219B1FE060B400066512 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		AD27219D1FE061BF00066512 /* ViewController+UICollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+UICollectionView.swift"; sourceTree = "<group>"; };
+		AD27219F1FE0623000066512 /* PostCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCellDelegate.swift; sourceTree = "<group>"; };
 		AD29DB7B1F9D2170004F1539 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		AD29DB7F1F9D235D004F1539 /* ProfileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCell.swift; sourceTree = "<group>"; };
 		AD32F3891FCDDAEF00DCBB1D /* images.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = images.json; sourceTree = "<group>"; };
@@ -148,6 +150,7 @@
 				ADE0E5281F9D6801009672CC /* User.swift */,
 				ADE0E5261F9D67F2009672CC /* Post.swift */,
 				AD27219B1FE060B400066512 /* DataManager.swift */,
+				AD27219F1FE0623000066512 /* PostCellDelegate.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -233,6 +236,7 @@
 				AD52AF791FD1EDF2009573AC /* StoriesCollectionViewCell.swift in Sources */,
 				ADCCF1211F9C270F0020ECFB /* ActivityLikeCell.swift in Sources */,
 				ADE0E5271F9D67F2009672CC /* Post.swift in Sources */,
+				AD2721A01FE0623000066512 /* PostCellDelegate.swift in Sources */,
 				ADCCF1231F9C270F0020ECFB /* ActivityFollowingCell.swift in Sources */,
 				ADE0E5291F9D6801009672CC /* User.swift in Sources */,
 				ADCCF1221F9C270F0020ECFB /* ImageCell.swift in Sources */,

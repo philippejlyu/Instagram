@@ -54,13 +54,18 @@ class ViewController: UITableViewController, PostCellDelegate {
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.row == 0 {
+            //Set the height for stories
             return 93.5
         } else {
+            //Set the height for the rest of the cells
             return 485.0
         }
     }
     
     //MARK: - Post Cell delegate
+    /*
+     -This is used to open the user profile. When the button in the table view cell is pressed, this code will run
+    */
     func willOpenProfile(named: String) {
         self.usernameToSend = named
         performSegue(withIdentifier: "showProfile", sender: self)
@@ -81,8 +86,4 @@ class ViewController: UITableViewController, PostCellDelegate {
         }
     }   
 
-}
-
-protocol PostCellDelegate {
-    func willOpenProfile(named: String)
 }
