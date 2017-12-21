@@ -33,12 +33,11 @@ class InstagramTests: XCTestCase {
         XCTAssert(result.caption == "I like the way Snrub thinks")
     }
     
-    
-    
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+    func testInternetJSONParsing() {
+        dataManagerUnderTest.downloadJSONString(URL(string: "http://philippeyu.com/imageTests.json")!) { (posts) in
+            let result = posts[posts.count-1]
+            XCTAssert(result.username == "someonecalledphilippe", "The name is \(result.username)")
+            XCTAssert(result.caption == "Wow, this was the coolest thing I've ever done")
         }
     }
     
