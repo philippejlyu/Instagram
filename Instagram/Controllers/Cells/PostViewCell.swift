@@ -72,7 +72,7 @@ class PostViewCell: UITableViewCell {
     }
     
     @IBAction func usernameClicked() {
-        delegate.willOpenProfile(named: (usernameButton.titleLabel?.text)!)
+        delegate.willOpenProfile(named: (usernameButton.titleLabel?.text)!, profilePicture: self.profileImageView.image!)
         
     }
     

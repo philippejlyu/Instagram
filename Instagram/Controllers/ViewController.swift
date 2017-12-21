@@ -12,6 +12,7 @@ class ViewController: UITableViewController, PostCellDelegate {
     
     //MARK: - Properties
     var usernameToSend = ""
+    var profilePictureToSend = UIImage()
     var posts = [Post]()
     let dataManager = DataManager()
     
@@ -71,8 +72,9 @@ class ViewController: UITableViewController, PostCellDelegate {
     /*
      -This is used to open the user profile. When the button in the table view cell is pressed, this code will run
     */
-    func willOpenProfile(named: String) {
+    func willOpenProfile(named: String, profilePicture: UIImage) {
         self.usernameToSend = named
+        self.profilePictureToSend = profilePicture
         performSegue(withIdentifier: "showProfile", sender: self)
     }
 
@@ -87,7 +89,8 @@ class ViewController: UITableViewController, PostCellDelegate {
         if segue.identifier == "showProfile" {
             let dest = segue.destination as! ProfileViewController
             dest.ownProfile = false
-            dest.username = usernameToSend
+            dest.profilePicture = self.profilePictureToSend
+            dest.username = self.usernameToSend
         }
     }   
 

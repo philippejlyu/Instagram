@@ -6,8 +6,8 @@
 //  Copyright © 2017 Philippe Yu. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 protocol PostCellDelegate {
-    func willOpenProfile(named: String)
+    func willOpenProfile(named: String, profilePicture: UIImage)
 }
