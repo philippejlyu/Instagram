@@ -38,6 +38,7 @@ class PostViewCell: UITableViewCell {
     }
     
     func downloadImage(url: URL) {
+        /*
         let request = URLRequest(url: url)
         
          let session = URLSession.shared
@@ -48,7 +49,14 @@ class PostViewCell: UITableViewCell {
             }
          }
         task.resume()
- 
+        */
+        let manager = DataManager()
+        manager.downloadImage(url: url) { (image) in
+            DispatchQueue.main.async {
+                self.contentImageView.image = image
+            }
+            
+        }
         /*
         NSURLConnection.sendAsynchronousRequest(request, queue: .main) { (response, data, error) in
             guard let data = data else { return }

@@ -28,4 +28,17 @@ class DataManager {
         
         return posts
     }
+    
+    
+    func downloadImage(url: URL, completionHandler: @escaping (UIImage) -> Void) {
+        let request = URLRequest(url: url)
+        DispatchQueue.main.async {
+            let session = URLSession.shared
+            let task = session.dataTask(with: request) { (data, response, error) in
+                guard let imageData = data else { return }
+                completionHandler(UIImage(data: imageData)!)
+            }
+            task.resume()
+        }
+    }
 }
