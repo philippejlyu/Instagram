@@ -11,7 +11,8 @@ import UIKit
 class StoriesCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var storyImageView: UIImageView!
     
-    func setImage(imageURL: URL) {
-        
+    func setup() {
+        self.storyImageView.layer.cornerRadius = 25.0
+        self.storyImageView.clipsToBounds = true
     }
 }
