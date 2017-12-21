@@ -20,6 +20,7 @@ class PostViewCell: UITableViewCell {
     @IBOutlet weak var contentImageView: UIImageView!
     @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var usernameButton: UIButton!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     //MARK: - Lifecycle
     override func awakeFromNib() {
@@ -45,6 +46,7 @@ class PostViewCell: UITableViewCell {
         manager.downloadImage(url: contentImage) { (image) in
             queue.async {
                 self.contentImageView.image = image
+                self.activityIndicator.stopAnimating()
             }
         }
         

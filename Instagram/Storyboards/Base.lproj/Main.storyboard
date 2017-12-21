@@ -382,12 +382,16 @@
                                                 <action selector="usernameClicked" destination="ccJ-lR-zPp" eventType="touchUpInside" id="0h9-nu-fin"/>
                                             </connections>
                                         </button>
+                                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="k6r-sd-pTf">
+                                            <rect key="frame" x="177" y="232" width="20" height="20"/>
+                                        </activityIndicatorView>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="zg0-e7-41G" firstAttribute="top" secondItem="uGR-Ak-mOr" secondAttribute="bottom" constant="8" id="031-QA-jyr"/>
                                         <constraint firstItem="uGR-Ak-mOr" firstAttribute="leading" secondItem="Rqk-Cr-v0C" secondAttribute="leading" constant="8" id="1QO-nU-55w"/>
                                         <constraint firstItem="QLs-MN-J9w" firstAttribute="leading" secondItem="uGR-Ak-mOr" secondAttribute="trailing" constant="8" id="3VW-0J-gVX"/>
                                         <constraint firstItem="f61-DK-bIP" firstAttribute="leading" secondItem="QLs-MN-J9w" secondAttribute="trailing" constant="8" id="5UB-KS-GXU"/>
+                                        <constraint firstItem="k6r-sd-pTf" firstAttribute="centerX" secondItem="Rqk-Cr-v0C" secondAttribute="centerX" id="7ar-1E-G8U"/>
                                         <constraint firstAttribute="trailing" secondItem="zg0-e7-41G" secondAttribute="trailing" constant="8" id="8yO-is-rav"/>
                                         <constraint firstItem="uGR-Ak-mOr" firstAttribute="top" secondItem="djN-lF-ezK" secondAttribute="bottom" constant="8" id="AZL-FJ-Y1a"/>
                                         <constraint firstItem="f61-DK-bIP" firstAttribute="top" secondItem="djN-lF-ezK" secondAttribute="bottom" constant="8" id="Azl-si-wZ0"/>
@@ -396,6 +400,7 @@
                                         <constraint firstItem="djN-lF-ezK" firstAttribute="leading" secondItem="Rqk-Cr-v0C" secondAttribute="leading" id="KPT-jT-bTg"/>
                                         <constraint firstAttribute="trailing" secondItem="fSm-0X-eVU" secondAttribute="trailing" constant="8" id="KXr-GC-C2R"/>
                                         <constraint firstAttribute="trailing" secondItem="hZ3-bo-Yec" secondAttribute="trailing" constant="8" id="OII-KK-qS1"/>
+                                        <constraint firstItem="k6r-sd-pTf" firstAttribute="centerY" secondItem="Rqk-Cr-v0C" secondAttribute="centerY" id="UnI-KV-yXX"/>
                                         <constraint firstItem="QLs-MN-J9w" firstAttribute="top" secondItem="djN-lF-ezK" secondAttribute="bottom" constant="8" id="cJN-K5-HGR"/>
                                         <constraint firstItem="zg0-e7-41G" firstAttribute="leading" secondItem="Rqk-Cr-v0C" secondAttribute="leading" constant="8" id="d5t-0e-JOC"/>
                                         <constraint firstItem="fSm-0X-eVU" firstAttribute="top" secondItem="Rqk-Cr-v0C" secondAttribute="top" constant="23" id="dbe-k9-Xao"/>
@@ -407,6 +412,7 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="activityIndicator" destination="k6r-sd-pTf" id="HqJ-y2-8mX"/>
                                     <outlet property="captionLabelView" destination="zg0-e7-41G" id="Bwu-Yb-4kt"/>
                                     <outlet property="contentImageView" destination="djN-lF-ezK" id="2Yn-Ag-ZJZ"/>
                                     <outlet property="likeButton" destination="uGR-Ak-mOr" id="pr4-6N-acy"/>
@@ -489,7 +495,14 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="427"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
+                                                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="xZ6-mC-q99">
+                                                    <rect key="frame" x="177" y="203" width="20" height="20"/>
+                                                </activityIndicatorView>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="xZ6-mC-q99" firstAttribute="centerX" secondItem="aOt-oc-wRv" secondAttribute="centerX" id="HTE-HI-70q"/>
+                                                <constraint firstItem="xZ6-mC-q99" firstAttribute="centerY" secondItem="aOt-oc-wRv" secondAttribute="centerY" id="ogg-3m-e3f"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="41" id="rBM-7b-2Fp">
@@ -558,6 +571,7 @@
                         </connections>
                     </tableView>
                     <connections>
+                        <outlet property="activityIndicator" destination="xZ6-mC-q99" id="2HS-yP-uog"/>
                         <outlet property="captiontextView" destination="fCa-pB-001" id="BFc-ve-Tcj"/>
                         <outlet property="imageView" destination="css-ya-8hS" id="k5K-LE-pgr"/>
                         <outlet property="profilePicture" destination="hSP-Ag-qhd" id="ilS-n1-2x4"/>
@@ -818,6 +832,9 @@
                         </connections>
                     </collectionView>
                     <navigationItem key="navigationItem" title="someonecalledphilippe" id="roH-TE-SY3"/>
+                    <connections>
+                        <segue destination="hSU-z4-6CX" kind="show" id="rqv-yp-L2s"/>
+                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zKn-fx-gXW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -849,5 +866,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="pqd-wj-0Rl"/>
+        <segue reference="rqv-yp-L2s"/>
     </inferredMetricsTieBreakers>
 </document>
