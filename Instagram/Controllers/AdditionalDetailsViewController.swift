@@ -12,6 +12,7 @@ class AdditionalDetailsViewController: UITableViewController {
 
     //MARK: - Properties
     var post: Post!
+    var manager = DataManager()
     
     //MARK: - Outlets
     @IBOutlet weak var imageView: UIImageView!
@@ -23,11 +24,26 @@ class AdditionalDetailsViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         if let post = post {
-            //self.imageView.image = post.imageURL
-            //self.imageView.image = DataManager().downloadImage(url: post.imageURL)
+            getImages(contentImage: post.imageURL, profileImage: post.userProfilePic)
         }
     }
 
+    func getImages(contentImage: URL, profileImage: URL) {
+        let queue = DispatchQueue(label: "com.philippe.\(contentImage)", qos: .userInteractive, attributes: .concurrent, target: DispatchQueue.main)
+        manager.downloadImage(url: contentImage) { (image) in
+            queue.async {
+                self.imageView.image = image
+            }
+            
+        }
+        manager.downloadImage(url: profileImage) { (image) in
+            queue.async {
+                self.profilePicture.image = image
+            }
+            
+        }
+    }
+    
     // MARK: - Table view data source
 
     /*
