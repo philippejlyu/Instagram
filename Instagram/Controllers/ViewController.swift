@@ -18,8 +18,13 @@ class ViewController: UITableViewController, PostCellDelegate {
     //MARK: - View lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        let url = Bundle.main.url(forResource: "images", withExtension: "json")
-        self.posts = dataManager.getJSONString(url!)
+        dataManager.downloadJSONString(URL(string: "https://raw.githubusercontent.com/philippejlyu/Instagram/master/Instagram/images.json")!) { (post) in            
+                DispatchQueue.main.async {
+                    self.posts = post
+                    self.tableView.reloadData()
+                }
+            }
+        //self.posts = dataManager.getJSONString(url!)
     }
 
 

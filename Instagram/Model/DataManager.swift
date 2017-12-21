@@ -29,6 +29,29 @@ class DataManager {
         return posts
     }
     
+    func downloadJSONString(_ url: URL, completionHandler: @escaping ([Post]) -> Void) {
+        //Create the request
+        let request = URLRequest(url: url)
+        DispatchQueue.main.async {
+            let session = URLSession.shared
+            let task = session.dataTask(with: request, completionHandler: { (data, response, error) in
+                var posts: [Post] = []
+                do {
+                    guard let json = try JSONSerialization.jsonObject(with: data!) as? [String: Any] else { return }
+                    guard let results = json["results"] as? [[String: Any]] else { return }
+                    for result in results {
+                        let newPost = Post(imageURL: URL(string: result["imageURL"] as! String)!, caption: result["caption"] as! String, username: result["username"] as! String, userProfilePic: URL(string: result["userProfilePic"] as! String)!)
+                        posts.append(newPost)
+                    }
+                    
+                } catch {
+                    fatalError()
+                }
+                completionHandler(posts)
+            })
+            task.resume()
+        }
+    }
     
     func downloadImage(url: URL, completionHandler: @escaping (UIImage) -> Void) {
         let request = URLRequest(url: url)

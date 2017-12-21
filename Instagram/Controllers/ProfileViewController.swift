@@ -32,7 +32,7 @@ class ProfileViewController: UICollectionViewController, UICollectionViewDelegat
             //Profile summary
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "infoCell", for: indexPath) as! ProfileCell
             cell.descriptionLabel.text = "Loreum Ipsum dor sit amet"
-            cell.followerNumberLabel.text = "62"
+            cell.followerNumberLabel.text = "72"
             cell.followingNumberLabel.text = "158"
             cell.postNumberLabel.text = "260"
             cell.realNameLabel.text = "Philippe Yu"
