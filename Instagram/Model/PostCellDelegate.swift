@@ -9,5 +9,5 @@
 import UIKit
 
 protocol PostCellDelegate {
-    func willOpenProfile(named: String, profilePicture: UIImage)
+    func willOpenProfile(named: String, profilePicture: URL)
 }

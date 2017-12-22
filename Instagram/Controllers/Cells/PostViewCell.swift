@@ -13,6 +13,7 @@ class PostViewCell: UITableViewCell {
     //MARK: - Properties
     var delegate: PostCellDelegate!
     let manager = DataManager()
+    var profileImage: URL!
     
     //MARK: - Outlets
     @IBOutlet weak var captionTextView: UITextView!
@@ -34,7 +35,7 @@ class PostViewCell: UITableViewCell {
     
     func setOutlets(profileImage: URL, username: String, contentImage: UIImage, caption: String, imageURL: URL) {
         self.usernameButton.setTitle(username, for: .normal)
-        //self.captionLabelView.attributedText = ma
+        self.profileImage = profileImage
         self.captionTextView.attributedText = manager.getAttributedString(username: username, text: caption)
         downloadImages(contentImage: imageURL, profileImage: profileImage)
     }
@@ -73,10 +74,7 @@ class PostViewCell: UITableViewCell {
     }
     
     @IBAction func usernameClicked() {
-        delegate.willOpenProfile(named: (usernameButton.titleLabel?.text)!, profilePicture: self.profileImageView.image!)
+        delegate.willOpenProfile(named: (usernameButton.titleLabel?.text)!, profilePicture: self.profileImage)
         
     }
-    
-    
-
 }

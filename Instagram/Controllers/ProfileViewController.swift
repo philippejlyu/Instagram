@@ -13,7 +13,8 @@ class ProfileViewController: UICollectionViewController, UICollectionViewDelegat
     //MARK: - Properties
     var ownProfile = true
     var username = "someonecalledphilippe"
-    var profilePicture: UIImage!
+    var user: User!
+    let manager = DataManager()
     
     //MARK: - View lifecycle
     override func viewDidLoad() {
@@ -33,13 +34,26 @@ class ProfileViewController: UICollectionViewController, UICollectionViewDelegat
         if indexPath.row == 0 {
             //Profile summary
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "infoCell", for: indexPath) as! ProfileCell
+            /*
             cell.descriptionLabel.text = "Loreum Ipsum dor sit amet"
             cell.followerNumberLabel.text = "72"
             cell.followingNumberLabel.text = "158"
             cell.postNumberLabel.text = "260"
             cell.realNameLabel.text = "Philippe Yu"
-            cell.profilePicture.image = self.profilePicture
+            cell.profilePicture.image = self.profilePicture*/
             cell.setUI(ownProfile: ownProfile)
+            
+            cell.descriptionLabel.text = user.description
+            cell.followerNumberLabel.text = "\(user.followers)"
+            cell.followingNumberLabel.text = "\(user.following)"
+            cell.postNumberLabel.text = "\(user.posts.count)"
+            cell.realNameLabel.text = user.realName
+            
+            manager.downloadImage(url: user.profilePic, completionHandler: { (image) in
+                DispatchQueue.main.async {
+                    cell.profilePicture.image = image
+                }
+            })
             return cell
         } else {
             //Do the photos
