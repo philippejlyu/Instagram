@@ -64,4 +64,21 @@ class DataManager {
             task.resume()
         }
     }
+    
+    func getAttributedString(username: String, text: String) -> NSMutableAttributedString {
+        //Create the bold attribute
+        let boldAttribute = [NSAttributedStringKey.font: UIFont.boldSystemFont(ofSize: 17.0)]
+        //Create the regular attribute
+        let regAttribute = [NSAttributedStringKey.font: UIFont.systemFont(ofSize: 17.0)]
+        //Create the username text and make it bold
+        let usernameText = NSMutableAttributedString(string: username, attributes: boldAttribute)
+        //Create the caption and the complete caption variables. Put a space before you actually start the text
+        let captionText = NSMutableAttributedString(string: " \(text)", attributes: regAttribute)
+        let completeCaption = NSMutableAttributedString()
+        //Add the two parts to the complete caption
+        completeCaption.append(usernameText)
+        completeCaption.append(captionText)
+        
+        return completeCaption
+    }
 }

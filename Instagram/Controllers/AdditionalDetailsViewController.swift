@@ -26,6 +26,7 @@ class AdditionalDetailsViewController: UITableViewController {
         super.viewDidLoad()
         if let post = post {
             getImages(contentImage: post.imageURL, profileImage: post.userProfilePic)
+            self.captiontextView.attributedText = manager.getAttributedString(username: post.username, text: post.caption)
         }
     }
 
@@ -47,11 +48,6 @@ class AdditionalDetailsViewController: UITableViewController {
         }
     }
     
-    /*
-    func getAttributedText(_ text: String) -> NSAttributedString {
-        //TODO
-    }
-    */
     // MARK: - Table view data source
 
     
