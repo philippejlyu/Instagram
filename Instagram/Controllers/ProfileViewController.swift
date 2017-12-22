@@ -25,7 +25,9 @@ class ProfileViewController: UICollectionViewController, UICollectionViewDelegat
     
     //MARK: - Collection View data source
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of items
+        if !ownProfile {
+            return user.posts.count + 1
+        }
         return 20
     }
 
@@ -34,31 +36,37 @@ class ProfileViewController: UICollectionViewController, UICollectionViewDelegat
         if indexPath.row == 0 {
             //Profile summary
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "infoCell", for: indexPath) as! ProfileCell
-            /*
-            cell.descriptionLabel.text = "Loreum Ipsum dor sit amet"
-            cell.followerNumberLabel.text = "72"
-            cell.followingNumberLabel.text = "158"
-            cell.postNumberLabel.text = "260"
-            cell.realNameLabel.text = "Philippe Yu"
-            cell.profilePicture.image = self.profilePicture*/
             cell.setUI(ownProfile: ownProfile)
             
-            cell.descriptionLabel.text = user.description
-            cell.followerNumberLabel.text = "\(user.followers)"
-            cell.followingNumberLabel.text = "\(user.following)"
-            cell.postNumberLabel.text = "\(user.posts.count)"
-            cell.realNameLabel.text = user.realName
             
-            manager.downloadImage(url: user.profilePic, completionHandler: { (image) in
-                DispatchQueue.main.async {
-                    cell.profilePicture.image = image
-                }
-            })
+            //TODO Make the own profile page work properly
+            if !ownProfile {
+                cell.descriptionLabel.text = user.description
+                cell.followerNumberLabel.text = "\(user.followers)"
+                cell.followingNumberLabel.text = "\(user.following)"
+                cell.postNumberLabel.text = "\(user.posts.count)"
+                cell.realNameLabel.text = user.realName
+                manager.downloadImage(url: user.profilePic, completionHandler: { (image) in
+                    DispatchQueue.main.async {
+                        cell.profilePicture.image = image
+                    }
+                })
+            }
+            
             return cell
         } else {
             //Do the photos
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "imageCell", for: indexPath) as! ImageCell
-            cell.contentImageView.image = UIImage(named: "Club")
+            if ownProfile {
+                cell.contentImageView.image = UIImage(named: "Club")
+            } else {
+                manager.downloadImage(url: user.posts[indexPath.row-1].imageURL, completionHandler: { (image) in
+                    DispatchQueue.main.async {
+                        cell.contentImageView.image = image
+                    }
+                })
+            }
+            
             return cell
         }
         
