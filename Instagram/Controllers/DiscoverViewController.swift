@@ -30,6 +30,10 @@ class DiscoverViewController: UICollectionViewController, UICollectionViewDelega
         return cell
     }
     
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "seePost", sender: self)
+    }
+    
     //MARK: - UICollectionViewDelegateFlowLayout
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -40,6 +44,16 @@ class DiscoverViewController: UICollectionViewController, UICollectionViewDelega
         let cellWidth = screenWidth / 3.02
         
         return CGSize(width: cellWidth, height: cellWidth)
+    }
+    
+    //MARK: - Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+        if segue.identifier == "seePost" {
+            let dest = segue.destination as! AdditionalDetailsViewController
+            dest.post = Post(imageURL: URL(string: "http://img2.wikia.nocookie.net/__cb20140416021517/simpsons/images/5/5e/Snrub.jpg")!, caption: "Wow, so good", username: "SomeoneCalledPhilippe", userProfilePic: URL(string: "https://asheathersworldturns.files.wordpress.com/2014/08/waylon.jpg")!)
+        }
     }
 
 }

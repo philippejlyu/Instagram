@@ -12,14 +12,20 @@ class ViewController: UITableViewController, PostCellDelegate {
     
     //MARK: - Properties
     var usernameToSend = ""
+    var profilePictureToSend = UIImage()
     var posts = [Post]()
     let dataManager = DataManager()
     
     //MARK: - View lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        let url = Bundle.main.url(forResource: "images", withExtension: "json")
-        self.posts = dataManager.getJSONString(url!)
+        dataManager.downloadJSONString(URL(string: "https://raw.githubusercontent.com/philippejlyu/Instagram/master/Instagram/images.json")!) { (post) in            
+                DispatchQueue.main.async {
+                    self.posts = post
+                    self.tableView.reloadData()
+                }
+            }
+        //self.posts = dataManager.getJSONString(url!)
     }
 
 
@@ -66,8 +72,9 @@ class ViewController: UITableViewController, PostCellDelegate {
     /*
      -This is used to open the user profile. When the button in the table view cell is pressed, this code will run
     */
-    func willOpenProfile(named: String) {
+    func willOpenProfile(named: String, profilePicture: UIImage) {
         self.usernameToSend = named
+        self.profilePictureToSend = profilePicture
         performSegue(withIdentifier: "showProfile", sender: self)
     }
 
@@ -82,7 +89,8 @@ class ViewController: UITableViewController, PostCellDelegate {
         if segue.identifier == "showProfile" {
             let dest = segue.destination as! ProfileViewController
             dest.ownProfile = false
-            dest.username = usernameToSend
+            dest.profilePicture = self.profilePictureToSend
+            dest.username = self.usernameToSend
         }
     }   
 

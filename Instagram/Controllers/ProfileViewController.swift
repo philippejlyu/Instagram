@@ -13,11 +13,13 @@ class ProfileViewController: UICollectionViewController, UICollectionViewDelegat
     //MARK: - Properties
     var ownProfile = true
     var username = "someonecalledphilippe"
+    var profilePicture: UIImage!
     
     //MARK: - View lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.title = username
+        
     }
     
     //MARK: - Collection View data source
@@ -32,10 +34,11 @@ class ProfileViewController: UICollectionViewController, UICollectionViewDelegat
             //Profile summary
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "infoCell", for: indexPath) as! ProfileCell
             cell.descriptionLabel.text = "Loreum Ipsum dor sit amet"
-            cell.followerNumberLabel.text = "62"
+            cell.followerNumberLabel.text = "72"
             cell.followingNumberLabel.text = "158"
             cell.postNumberLabel.text = "260"
             cell.realNameLabel.text = "Philippe Yu"
+            cell.profilePicture.image = self.profilePicture
             cell.setUI(ownProfile: ownProfile)
             return cell
         } else {

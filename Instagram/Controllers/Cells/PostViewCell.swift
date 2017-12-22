@@ -12,13 +12,15 @@ class PostViewCell: UITableViewCell {
     
     //MARK: - Properties
     var delegate: PostCellDelegate!
+    let manager = DataManager()
     
     //MARK: - Outlets
-    @IBOutlet weak var captionLabelView: UILabel!
+    @IBOutlet weak var captionTextView: UITextView!
     @IBOutlet weak var likeButton: UIButton!
     @IBOutlet weak var contentImageView: UIImageView!
     @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var usernameButton: UIButton!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     //MARK: - Lifecycle
     override func awakeFromNib() {
@@ -32,29 +34,29 @@ class PostViewCell: UITableViewCell {
     
     func setOutlets(profileImage: URL, username: String, contentImage: UIImage, caption: String, imageURL: URL) {
         self.usernameButton.setTitle(username, for: .normal)
-        self.captionLabelView.text = "\(username): \(caption)"
-        downloadImage(url: imageURL)
-        downloadProfilePic(url: profileImage)
+        //self.captionLabelView.attributedText = ma
+        self.captionTextView.attributedText = manager.getAttributedString(username: username, text: caption)
+        downloadImages(contentImage: imageURL, profileImage: profileImage)
     }
     
-    func downloadImage(url: URL) {
-        let request = URLRequest(url: url)
+    func downloadImages(contentImage: URL, profileImage: URL) {
+        //Download the content image view
+        //Create a custom conqurrent queue that runs on the main thread so that UI updates happen instantly
+        let queue = DispatchQueue(label: "com.philippe.\(contentImage)", qos: .userInteractive, attributes: .concurrent, target: DispatchQueue.main)
         
-         let session = URLSession.shared
-         let task = session.dataTask(with: request) { (data, response, error) in
-            DispatchQueue.main.async {
-                guard let imageData = data else { return }
-                self.contentImageView.image = UIImage(data: imageData)
+        manager.downloadImage(url: contentImage) { (image) in
+            queue.async {
+                self.contentImageView.image = image
+                self.activityIndicator.stopAnimating()
             }
-         }
-        task.resume()
- 
-        /*
-        NSURLConnection.sendAsynchronousRequest(request, queue: .main) { (response, data, error) in
-            guard let data = data else { return }
-            self.contentImageView.image = UIImage(data: data)
         }
-         */
+        
+        //Download the profile picture
+        manager.downloadImage(url: profileImage) { (image) in
+            queue.async {
+                self.profileImageView.image = image
+            }
+        }
     }
     
     func downloadProfilePic(url: URL) {
@@ -71,7 +73,7 @@ class PostViewCell: UITableViewCell {
     }
     
     @IBAction func usernameClicked() {
-        delegate.willOpenProfile(named: (usernameButton.titleLabel?.text)!)
+        delegate.willOpenProfile(named: (usernameButton.titleLabel?.text)!, profilePicture: self.profileImageView.image!)
         
     }
     
