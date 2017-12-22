@@ -37,7 +37,8 @@ class PostViewCell: UITableViewCell {
         self.usernameButton.setTitle(username, for: .normal)
         self.profileImage = profileImage
         self.captionTextView.attributedText = manager.getAttributedString(username: username, text: caption)
-        downloadImages(contentImage: imageURL, profileImage: profileImage)
+        self.contentImageView.image = contentImage
+        //downloadImages(contentImage: imageURL, profileImage: profileImage)
     }
     
     func downloadImages(contentImage: URL, profileImage: URL) {

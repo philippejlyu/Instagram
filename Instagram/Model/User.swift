@@ -8,7 +8,7 @@
 
 import UIKit
 
-struct User: Codable {
+struct User {
     var followers: Int
     var posts: [Post]
     var following: Int

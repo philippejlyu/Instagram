@@ -21,7 +21,7 @@ class ViewController: UITableViewController, PostCellDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        dataManager.downloadJSONString(URL(string: "https://raw.githubusercontent.com/philippejlyu/Instagram/master/Instagram/images.json")!) { (post) in            
+        dataManager.downloadJSONString(URL(string: "https://raw.githubusercontent.com/philippejlyu/Instagram/master/Instagram/images.json")!, delegate: self) { (post) in            
                 DispatchQueue.main.async {
                     self.posts = post
                     self.tableView.reloadData()
@@ -29,6 +29,7 @@ class ViewController: UITableViewController, PostCellDelegate {
             }
         let url = Bundle.main.url(forResource: "images", withExtension: "json")
         //self.posts = dataManager.getJSONString(url!)
+        
     }
 
 
@@ -53,7 +54,7 @@ class ViewController: UITableViewController, PostCellDelegate {
             
             //TODO
             
-            cell.setOutlets(profileImage: postRef.userProfilePic, username: postRef.username, contentImage: UIImage(named: "Hero")!, caption: postRef.caption, imageURL: postRef.imageURL)
+            cell.setOutlets(profileImage: postRef.userProfilePic, username: postRef.username, contentImage: postRef.contentImage, caption: postRef.caption, imageURL: postRef.imageURL)
             
             return cell
         }
@@ -79,6 +80,10 @@ class ViewController: UITableViewController, PostCellDelegate {
         self.usernameToSend = named
         self.profileToSend = User(followers: 200, posts: self.posts, following: 245, profilePic: profilePicture, description: "I am a great person. CEO of the world coroporation, President of Mars, politician", realName: "President Kang")
         performSegue(withIdentifier: "showProfile", sender: self)
+    }
+    
+    func reloadTableViewData() {
+        self.tableView.reloadData()
     }
 
     

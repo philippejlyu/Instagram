@@ -29,7 +29,7 @@ class DataManager {
         return posts
     }
     
-    func downloadJSONString(_ url: URL, completionHandler: @escaping ([Post]) -> Void) {
+    func downloadJSONString(_ url: URL, delegate: PostCellDelegate, completionHandler: @escaping ([Post]) -> Void) {
         //Create the request
         let request = URLRequest(url: url)
         DispatchQueue.main.async {
@@ -40,7 +40,8 @@ class DataManager {
                     guard let json = try JSONSerialization.jsonObject(with: data!) as? [String: Any] else { return }
                     guard let results = json["results"] as? [[String: Any]] else { return }
                     for result in results {
-                        let newPost = Post(imageURL: URL(string: result["imageURL"] as! String)!, caption: result["caption"] as! String, username: result["username"] as! String, userProfilePic: URL(string: result["userProfilePic"] as! String)!)
+                        let newPost = Post(imageURL: URL(string: result["imageURL"] as! String)!, caption: result["caption"] as! String, username: result["username"] as! String, userProfilePic: URL(string: result["userProfilePic"] as! String)!, delegate: delegate)
+                        newPost.getContentImage()
                         posts.append(newPost)
                     }
                     

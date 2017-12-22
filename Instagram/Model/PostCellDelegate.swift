@@ -10,4 +10,5 @@ import UIKit
 
 protocol PostCellDelegate {
     func willOpenProfile(named: String, profilePicture: URL)
+    func reloadTableViewData()
 }
