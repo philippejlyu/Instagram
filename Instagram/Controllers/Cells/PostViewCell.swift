@@ -15,7 +15,7 @@ class PostViewCell: UITableViewCell {
     let manager = DataManager()
     
     //MARK: - Outlets
-    @IBOutlet weak var captionLabelView: UILabel!
+    @IBOutlet weak var captionTextView: UITextView!
     @IBOutlet weak var likeButton: UIButton!
     @IBOutlet weak var contentImageView: UIImageView!
     @IBOutlet weak var profileImageView: UIImageView!
@@ -34,7 +34,8 @@ class PostViewCell: UITableViewCell {
     
     func setOutlets(profileImage: URL, username: String, contentImage: UIImage, caption: String, imageURL: URL) {
         self.usernameButton.setTitle(username, for: .normal)
-        self.captionLabelView.text = "\(username): \(caption)"
+        //self.captionLabelView.attributedText = ma
+        self.captionTextView.attributedText = manager.getAttributedString(username: username, text: caption)
         downloadImages(contentImage: imageURL, profileImage: profileImage)
     }
     
